@@ -8,22 +8,22 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema flexidiary
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
+DROP SCHEMA IF EXISTS `flexidiary` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema flexidiary
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `flexidiary` DEFAULT CHARACTER SET utf8 ;
+USE `flexidiary` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Blogs`
+-- Table `flexidiary`.`Blogs`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Blogs` ;
+DROP TABLE IF EXISTS `flexidiary`.`Blogs` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Blogs` (
+CREATE TABLE IF NOT EXISTS `flexidiary`.`Blogs` (
   `idBlog` INT NOT NULL AUTO_INCREMENT,
   `Title` VARCHAR(85) NOT NULL,
   `Description` LONGTEXT NULL,
@@ -38,18 +38,18 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Blogs` (
   INDEX `Fk_Blog_idx` (`idUsers` ASC) VISIBLE,
   CONSTRAINT `Fk_Blog`
     FOREIGN KEY (`idUsers`)
-    REFERENCES `mydb`.`Users` (`idUsers`)
+    REFERENCES `flexidiary`.`Users` (`idUsers`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Users`
+-- Table `flexidiary`.`Users`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Users` ;
+DROP TABLE IF EXISTS `flexidiary`.`Users` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
+CREATE TABLE IF NOT EXISTS `flexidiary`.`Users` (
   `idUsers` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(85) NOT NULL,
   `Email` VARCHAR(85) NOT NULL,
@@ -60,18 +60,18 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
   UNIQUE INDEX `idUsers_UNIQUE` (`idUsers` ASC) VISIBLE,
   CONSTRAINT `fk_Users_1`
     FOREIGN KEY (`idUsers`)
-    REFERENCES `mydb`.`Blogs` (`idBlog`)
+    REFERENCES `flexidiary`.`Blogs` (`idBlog`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Tags`
+-- Table `flexidiary`.`Tags`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Tags` ;
+DROP TABLE IF EXISTS `flexidiary`.`Tags` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Tags` (
+CREATE TABLE IF NOT EXISTS `flexidiary`.`Tags` (
   `idTag` INT NOT NULL AUTO_INCREMENT,
   `Tag_Name` VARCHAR(85) NOT NULL,
   `idUsers` INT NOT NULL,
@@ -80,18 +80,18 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Tags` (
   INDEX `fk_Tag_user_idx` (`idUsers` ASC) VISIBLE,
   CONSTRAINT `fk_Tag_user`
     FOREIGN KEY (`idUsers`)
-    REFERENCES `mydb`.`Users` (`idUsers`)
+    REFERENCES `flexidiary`.`Users` (`idUsers`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Articles`
+-- Table `flexidiary`.`Articles`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Articles` ;
+DROP TABLE IF EXISTS `flexidiary`.`Articles` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Articles` (
+CREATE TABLE IF NOT EXISTS `flexidiary`.`Articles` (
   `idArticle` INT NOT NULL AUTO_INCREMENT,
   `Title` VARCHAR(255) NOT NULL,
   `Image` VARCHAR(255) NULL,
@@ -106,23 +106,23 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Articles` (
   INDEX `fk_Articles_tag_idx` (`idTag` ASC) VISIBLE,
   CONSTRAINT `fk_Article_blog`
     FOREIGN KEY (`idBlog`)
-    REFERENCES `mydb`.`Blogs` (`idBlog`)
+    REFERENCES `flexidiary`.`Blogs` (`idBlog`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Articles_tag`
     FOREIGN KEY (`idTag`)
-    REFERENCES `mydb`.`Tags` (`idTag`)
+    REFERENCES `flexidiary`.`Tags` (`idTag`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Comments`
+-- Table `flexidiary`.`Comments`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Comments` ;
+DROP TABLE IF EXISTS `flexidiary`.`Comments` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`Comments` (
+CREATE TABLE IF NOT EXISTS `flexidiary`.`Comments` (
   `idComment` INT NOT NULL AUTO_INCREMENT,
   `Content` LONGTEXT NOT NULL,
   `Date` DATETIME NOT NULL,
@@ -137,12 +137,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Comments` (
   INDEX `fk_Comments_2_idx` (`idArticle` ASC) VISIBLE,
   CONSTRAINT `fk_Comment_user`
     FOREIGN KEY (`idUsers`)
-    REFERENCES `mydb`.`Users` (`idUsers`)
+    REFERENCES `flexidiary`.`Users` (`idUsers`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Comment_article`
     FOREIGN KEY (`idArticle`)
-    REFERENCES `mydb`.`Articles` (`idArticle`)
+    REFERENCES `flexidiary`.`Articles` (`idArticle`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
