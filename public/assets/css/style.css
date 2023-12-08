@@ -1,3 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
-    color: #f76c6c;
+    color: black;
+    background-color:#EFEFEF;
+}
+.nav{
+ background-color: #B08FD1;
+ 
+ display: block;
+}
+.navlist{
+   display: flex;
+   flex-direction: row;
+   font-family: Consolas, Arial, sans-serif;
+   margin: 0;
+   padding: 1 rem 0;
+   justify-content: flex-end;
+   align-items: center;
+   
+}
+.navitem{
+    list-style: none;
+    margin-right: 2rem;
+}
+.navitem a{
+    text-decoration: none;
+    
+}
+.navitem:first-child{
+    margin-right: auto;
+}
+.logo-header {
+    height: 10vh;
 }

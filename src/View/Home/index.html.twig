@@ -1,6 +1,16 @@
 {% extends 'layout.html.twig' %}
+{% block header %}
+	{% include "Home/../components/_header_navbar.html.twig" %}
+{% endblock %}
 
 {% block content %}
-    <h1>Hello Wilder !</h1>
-    <p>Find a complete CRUD example on <a href="/items">/items</a> page.</p>
+	<center>
+		<h1>Welcome Flexidary !</h1>
+	</center>
+	<p>Find a complete CRUD example on
+		<a href="/items">/items</a>
+		page.</p>
+
+        {% include "Home/../components/_tagline.html.twig" %}
 {% endblock %}
+
