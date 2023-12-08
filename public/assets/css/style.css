@@ -32,3 +32,6 @@ body {
 .navitem:first-child{
     margin-right: auto;
 }
+.logo-header {
+    height: 10vh;
+}
