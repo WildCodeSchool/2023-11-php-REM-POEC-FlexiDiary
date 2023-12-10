@@ -1,0 +1,46 @@
+* {
+  --primary-bg-color: #B08FD1;
+  --secondary-color: #471974;
+  --dark-border-color: #133408;
+  --typo-color:whitesmoke; 
+  --year-color-2024: #ffbe98;
+}
+
+.card-blog-preview{
+  background-color: white;
+  border: 3px solid var(--year-color-2024);;
+  border-radius: 5%;
+  max-width: 25vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-blog-box-img {
+  width: 95%;
+  height: auto;
+  padding: 2.5%;
+}
+.img-blog-preview{
+  border-radius: 2vw;
+}
+.card-box-section-infos{
+  padding: 2.5%;
+}
+.card-blog-icon-action{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-height: 10vh;
+  width: 30%;
+  align-self: flex-end;
+  padding-right: 5%;
+  padding-bottom: 2.5%;
+}
+
+.card-blog-action{
+  width: 1.7vw;
+  height: auto;
+  margin-left: 1vw;
+}
