@@ -2,13 +2,20 @@
 
 namespace App\Controller;
 
+use App\Model\BlogsManager;
+
 class BlogController extends AbstractController
 {
+
     /**
-     * Display home page
+     * Display List Blogs
      */
     public function index(): string
     {
-        return $this->twig->render('Blog/index.html.twig');
+        $blogManager = new BlogsManager();
+        $blogs = $blogManager->selectAll();
+
+        return $this->twig->render('Blog/index.html.twig', [
+            'blogs' => $blogs]);
     }
 }

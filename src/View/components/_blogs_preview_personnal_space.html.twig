@@ -1,20 +1,17 @@
 <div class="card-blog-preview">
 	<div class="card-blog-box-img">
-		<img src="https://img.freepik.com/free-photo/futuristic-computer-graphic-glowing-human-face-generative-ai_188544-9003.jpg?w=1060&t=st=1702168287~exp=1702168887~hmac=c0674cad93e521ba7e4542e16888f176df9899739eb17f87ac9a6d2a3d8bd429" alt="" class="card-blog-box-img img-blog-preview">
+		<img src="{{Blog.Background_image}}" alt="" class="card-blog-box-img img-blog-preview">
 	</div>
 	<div class="card-box-section-infos">
-		<h2 class="card-blog-title">Jarry veille sur tout</h2>
-		<h4 class="card-blog-username">
-			Jarry Minot</h4>
-		<p class="card-blog-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-			    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-			    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-			    It was popularised in the 1960s with the release of Letraset sheets containing Lorem.
+		<h2 class="card-blog-title">{{Blog.Title}}</h2>
+		<p class="card-blog-description"> {{Blog.Description}}
 		</p>
 	</div>
 	<div class="card-blog-icon-action">
+		{# This button need to be visible only if the users is in the explorer mode and he's not the owner ! #}
 		<img src="/assets/images/icons/icon_bookmark.png" alt="bookmark icon pour enregistrer un blog à revisiter plus tard" class="card-blog-action">
 		<img src="/assets/images/icons/icon_warningsignal.png" alt="warning icon pour signaler un blog problèmatique" class="card-blog-action">
+		{# This button need to be visible only if the user is in his personal space and he 's the owner of it !  #}
 		<img src="/assets/images/icons/icon_delete_adminonly.png" alt="garbage icon pour supprimer un blog en tant qu'administrateur" class="card-blog-action">
 	</div>
 </div>
