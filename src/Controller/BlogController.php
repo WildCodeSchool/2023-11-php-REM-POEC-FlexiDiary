@@ -6,7 +6,6 @@ use App\Model\BlogsManager;
 
 class BlogController extends AbstractController
 {
-
     /**
      * Display List Blogs
      */
