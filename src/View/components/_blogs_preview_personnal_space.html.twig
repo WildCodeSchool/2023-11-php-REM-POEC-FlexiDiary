@@ -1,0 +1,18 @@
+<div class="card-blog-preview">
+	<div class="card-blog-box-img">
+		<img src="{{Blog.Background_image}}" alt="" class="card-blog-box-img img-blog-preview">
+	</div>
+	<div class="card-box-section-infos">
+		<h2 class="card-blog-title">{{Blog.Title}}</h2>
+		<p class="card-blog-description"> {{Blog.Description}}
+		</p>
+	</div>
+	<div class="card-blog-icon-action">
+		{# This button need to be visible only if the users is in the explorer mode and he's not the owner ! #}
+		<img src="/assets/images/icons/icon_bookmark.png" alt="bookmark icon pour enregistrer un blog à revisiter plus tard" class="card-blog-action">
+		<img src="/assets/images/icons/icon_warningsignal.png" alt="warning icon pour signaler un blog problèmatique" class="card-blog-action">
+		{# This button need to be visible only if the user is in his personal space and he 's the owner of it !  #}
+		<img src="/assets/images/icons/icon_delete_adminonly.png" alt="garbage icon pour supprimer un blog en tant qu'administrateur" class="card-blog-action">
+	</div>
+</div>
+

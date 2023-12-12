@@ -9,6 +9,7 @@
 return [
     '' => ['HomeController', 'index',],
     'privacypolicy' => ['HomeController', 'privacypolicy'],
+    'monprofil' => ['BlogController', 'index'],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
