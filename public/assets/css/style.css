@@ -1,7 +1,12 @@
 * {
+    --primary-bg-color: #B08FD1;
+    --secondary-color: #471974;
+    --dark-border-color: #133408;
+    --typo-color:whitesmoke; 
+    --year-color-2024: #ffbe98;
     margin: 0;
     padding: 0;
-}
+  }
 body {
     color: black;
     background-color:#EFEFEF;

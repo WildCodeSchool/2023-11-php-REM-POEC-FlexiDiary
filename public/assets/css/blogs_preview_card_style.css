@@ -1,11 +1,3 @@
-* {
-  --primary-bg-color: #B08FD1;
-  --secondary-color: #471974;
-  --dark-border-color: #133408;
-  --typo-color:whitesmoke; 
-  --year-color-2024: #ffbe98;
-}
-
 .card-blog-preview{
   background-color: white;
   border: 3px solid var(--year-color-2024);;
