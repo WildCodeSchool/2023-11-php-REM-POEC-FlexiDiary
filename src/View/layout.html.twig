@@ -9,15 +9,17 @@
 		<title>
 			{% block title %}{% endblock %}
 		</title>
-        <link rel="stylesheet" href="/assets/css/style.css">
+
+		{% include 'components/_csslinks.html.twig'%}
+
 		{% block stylesheet %}
 		{% endblock %}
 	</head>
 
 	<body>
-		{% block header %}{% endblock %}
+		{% include 'components/_header_navbar.html.twig' %}
 		{% block content %}{% endblock %}
-		{% block footer %}{% endblock %}
+		{% include 'components/_footer.html.twig' %}
 		{% block javascript %}{% endblock %}
 	</body>
 </html>
