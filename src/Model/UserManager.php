@@ -2,18 +2,19 @@
 
 namespace App\Model;
 
-use PDO;
-
 class UserManager extends AbstractManager
 {
-    public const TABLE = 'User';
-
-    public function selectOneByEmail(string $email): array
+    public const TABLE = 'users';
+    public function insert(array $credentials): int
     {
-        // prepared request
-        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE email=:email");
-        $statement->bindValue('email', $email, PDO::PARAM_STR);
+        $statement = $this->pdo->prepare("INSERT INTO " . static::TABLE .
+            " (`Name`, `Email`, `password`, `Picture`)
+        VALUES (:name, :email, :password, :picture)");
+        $statement->bindValue(':email', $credentials['email']);
+        $statement->bindValue(':password', password_hash($credentials['password'], PASSWORD_DEFAULT));
+        $statement->bindValue(':name', $credentials['name']);
+        $statement->bindValue(':picture', $credentials['image']);
         $statement->execute();
-        return $statement->fetch();
+        return (int)$this->pdo->lastInsertId();
     }
 }
