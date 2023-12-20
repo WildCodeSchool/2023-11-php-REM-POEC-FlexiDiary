@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 body{
-	background-color:#D9D9D9;
+	background-color: #B08FD1;
 }
 /*container*/
 .container{
@@ -14,7 +14,6 @@ body{
 	/*border: 1px solid black;*/
 	margin: auto;
 	margin-top: 50px;
-	
 }
 
 /* login form */
@@ -23,12 +22,12 @@ body{
 	flex-direction: column;
 	width: 50%;
 	align-items: center;
-	background:linear-gradient(#9F77B8, #9F4EA2, #A7366C);
+	background-color: whitesmoke;
 }
 .form h2{
 	font-size: 3rem;
 	margin: 40px;
-	color: #FFFF;
+	color:  #B08FD1;
 }
 .box{
 	padding: 12px;
@@ -37,14 +36,12 @@ body{
 	border: 1px solid  #B08FD1;
 	outline: none;
 	border-radius: 20px;
-	color: #000;
-	background-color: white;
 }
 #submit{
 	padding: 12px 30px;
 	width: 40%;
 	margin-top: 40px;
-	background-color: #90B877;
+	background-color:  #B08FD1;
 	color: white;
 	font-weight: bold;
 	border: none;
@@ -54,7 +51,7 @@ body{
 }
 #submit:hover{
 	cursor: pointer;
-	background-color: #D9D9D9;
+	background-color: #133408;
 }
 .form a{
 	text-decoration: none;
@@ -66,6 +63,7 @@ body{
 
 }
 /*right side*/
+
 .side{
 	display: flex;
 	justify-content: center;
@@ -79,82 +77,5 @@ body{
 	height: 450px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
