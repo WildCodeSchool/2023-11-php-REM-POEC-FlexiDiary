@@ -9,3 +9,11 @@ INSERT INTO Blogs (Title, Description, Date_creation, Background_image, idUsers)
  sur des lits de grenades", '2022-04-11', 'https://cdn.pixabay.com/photo/2017/07/25/18/47/kiwi-2539135_1280.jpg', 2);
 
  
+
+ INSERT INTO Tags (Tag_Name, idUsers)
+ VALUES
+  ("Fruits", 1),
+  ("Harry Styles", 1),
+  ("Programmation informatique", 1),
+  ("Jeux-vidéos", 1),
+  ("Cuisine", 1);
