@@ -61,8 +61,7 @@ class UserController extends AbstractController
             if (empty($errors)) {
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 $userManager = new userManager();
-                if($userManager->insert($securedCredentials))
-                {
+                if ($userManager->insert($securedCredentials)) {
                     $this->login();
                 }
             }
