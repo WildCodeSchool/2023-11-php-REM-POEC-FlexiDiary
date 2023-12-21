@@ -11,6 +11,7 @@ class UserController extends AbstractController
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $credentials = array_map('trim', $_POST);
+            $password = "";
             if ($credentials['email'] === '' || !filter_var($credentials['email'], FILTER_VALIDATE_EMAIL)) {
                 $errors[] = 'Veuillez saisir une addresse email valide';
             }
@@ -20,9 +21,6 @@ class UserController extends AbstractController
                 $password = $credentials['password'];
             } else {
                 $errors[] = 'Veuillez saisir un mot de passe';
-            }
-            if ($password === '') {
-                $errors[] = 'Veuillez saisir un mot de passs';
             }
             if (empty($errors)) {
                 $userManager = new UserManager();
