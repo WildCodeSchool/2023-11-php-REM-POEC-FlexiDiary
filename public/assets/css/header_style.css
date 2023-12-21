@@ -1,5 +1,5 @@
 .nav{
-  background: linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
+  background: var(--gradient-color);
   display: block;
  }
 

@@ -1,19 +1,24 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-<h1>Register an Account !</h1>
+{% block stylesheet %}
+		<link rel="stylesheet" href="/assets/css/register.css">
+{% endblock %}
 
-<form action="" method="post" enctype="multipart/form-data">
+{% block content %}
+<div class="container">
+<div class="form-container">
+<h1 class="form-title">Register an Account !</h1>
+<form action="" method="post" enctype="multipart/form-data" class="register-form">
+
 <div>
-    <label for="imageUpload">Profile Image</label>    
+    
+    <label for="imageUpload" class="avatar"><div class="plus"></div></label>    
     <input type="file" name="avatar" id="imageUpload" />
 </div>
-
 <div>
   <label for="name">Name</label>    
     <input type="input" name="name" id="name" required/>
 </div>
-
 <div>
   <label for="email">Email</label>    
     <input type="email" name="email" id="email" required/>
@@ -24,6 +29,8 @@
     <input type="password" name="password" id="password" required/>
 </div>
 
-    <button type="submit">Create account</button>
+    <button class="button form-button" type="submit">Register</button>
 </form>
+</div>
+</div>
 {% endblock %}

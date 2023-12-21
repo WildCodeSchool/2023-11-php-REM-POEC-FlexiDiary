@@ -4,13 +4,13 @@
              <li class="navitem">
              <a href="/"><img src="assets/images/logo2.png" class="logo-header" alt="logo lettre F avec une plume noir qui trace une ligne fine "></a>
              </li>
-            <li class="navitem"><a href="/monprofil">EXPLORER</a></li>
+            <li class="navitem"><a href="/monprofil">Découvrir</a></li>
             {% if user %}
-                <li class="navitem"><a href="/monprofil">PROFIL</a></li>
-                <li class="navitem"><a href="/logout">DECONNEXION</a></li>
+                <li class="navitem"><a href="/monprofil">Profil</a></li>
+                <li class="navitem button button-secondary"><a href="/logout">Déconnexion</a></li>
             {% else %}
-                <li class="navitem button button-secondary"><a href="/signup">INSCRIPTION</a></li>
-                <li class="navitem button"><a href="/login">CONNEXION</a></li>
+                <li class="navitem button button-secondary"><a href="/signup">Inscription</a></li>
+                <li class="navitem button"><a href="/login">Connexion</a></li>
             {% endif %}
         </ul>
     </nav>
