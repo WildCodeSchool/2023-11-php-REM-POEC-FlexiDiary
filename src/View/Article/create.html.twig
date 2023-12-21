@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
+	<form action="/article/create?id={{ idBlog }}" method="post" enctype="multipart/form-data">
+		<div>
+			<label for="Title">Le titre de l'article:</label>
+			<input type="text" id="Title" name="Title" required="true">
+		</div>
+        <div>
+            <label for="content">Ton meilleur contenu :</label>
+            <textarea name="Content" id="content" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="picture">Quelle image accompagnera tes mots ? </label>
+            <input type="file" name="picture" id="picture">
+        </div>
+        <div>
+            <label for="tags">Sujet de cet article :</label>
+            <select name="tags" id="tags">
+                {% for tag in tags %}
+                    <option value="{{tag.idTag}}">{{ tag.Tag_Name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="visibility">Mettre en ligne immédiatement ? </label>
+            <input type="checkbox" name="visibility" id="visibility">
+        </div>
+        <button type="submit">Enregistrer</button>
+	</form>
+{% endblock %}

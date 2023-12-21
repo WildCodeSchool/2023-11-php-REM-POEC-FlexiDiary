@@ -1,12 +1,23 @@
+.list-blogs-exists{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
 .card-blog-preview{
   background-color: white;
-  border: 3px solid var(--year-color-2024);;
+  border: 1px solid var(--secondary-color);
   border-radius: 5%;
   max-width: 25vw;
-  height: auto;
+  width: 25%;
+  height: 40%;
+  min-height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 2vh;
+  margin-right: 5vw;
 }
 
 .card-blog-box-img {
@@ -35,4 +46,16 @@
   width: 1.7vw;
   height: auto;
   margin-left: 1vw;
+}
+
+.card-blog-action-create{
+  width : 3vw;
+  height: auto;
+  align-self: center;
+  margin: 25vh;
+}
+
+.link-tocreate-blog{
+  width: 0;
+  height: 0;
 }
