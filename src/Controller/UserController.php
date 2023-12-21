@@ -9,6 +9,8 @@ class UserController extends AbstractController
     public function login(): string
     {
         $errors = [];
+        $password = "";
+
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $credentials = array_map('trim', $_POST);
             if ($credentials['email'] === '' || !filter_var($credentials['email'], FILTER_VALIDATE_EMAIL)) {
@@ -21,9 +23,7 @@ class UserController extends AbstractController
             } else {
                 $errors[] = 'Veuillez saisir un mot de passe';
             }
-            if ($password === '') {
-                $errors[] = 'Veuillez saisir un mot de passs';
-            }
+
             if (empty($errors)) {
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($email);
@@ -61,8 +61,7 @@ class UserController extends AbstractController
             if (empty($errors)) {
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 $userManager = new userManager();
-                if($userManager->insert($securedCredentials))
-                {
+                if ($userManager->insert($securedCredentials)) {
                     $this->login();
                 }
             }

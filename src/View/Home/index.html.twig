@@ -1,9 +1,17 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+
+{% if user %}
 	<center>
-		<h1>Welcome Flexidary !</h1>
+		<h1>{{user.Name}}!</h1>
 	</center>
+{% else %}
+	<center>
+		<h1>FlexiDiary!</h1>
+	</center>
+{% endif %}
+
 	<p>Find a complete CRUD example on
 		<a href="/items">/items</a>
 		page.</p>

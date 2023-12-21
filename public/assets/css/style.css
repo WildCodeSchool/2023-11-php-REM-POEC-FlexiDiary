@@ -1,13 +1,38 @@
-* {
-    --primary-bg-color: #B08FD1;
+:root {
+    --primary-bg-color: #b08fd1;
     --secondary-color: #471974;
     --dark-border-color: #133408;
-    --typo-color:whitesmoke; 
+    --typo-color: whitesmoke;
     --year-color-2024: #ffbe98;
+    --typo-h: "Jost", sans-serif;
+    --typo-p: "Anaheim", sans-serif;
+}
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
+
+a {
+    color: whitesmoke;
+}
+
 body {
-    color: black;
-    background-color:#EFEFEF;
+    background-color: #efefef;
+}
+.button {
+    width: 200px;
+    height: 50px;
+    background-color: #90b877;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.button-secondary {
+    background-color: #fff;
+    border: 1px solid #90b877;
+}
+
+.button-secondary > a {
+    color: #90b877;
 }
