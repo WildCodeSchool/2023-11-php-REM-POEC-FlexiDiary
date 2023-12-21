@@ -1,19 +1,15 @@
 {% extends 'layout.html.twig' %}
+
 {% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/header_style.css">
-	<link rel="stylesheet" href="/assets/css/blogs_preview_card_style.css">
-	<link rel="stylesheet" href="/assets/css/footer_style.css">
+			   <link rel="stylesheet" href="/assets/css/blogs_preview_card_style.css">
 {% endblock %}
-{% block header %}
-	{% include "Blog/../components/_header_navbar.html.twig" %}
-{% endblock %}
+
 {% block content %}
 	<h1>Blog  Content!</h1>
 	 <div class="list-blogs-exists">
 		{% for blog in blogs %}
-			{% include "Blog/../components/_blogs_preview_personnal_space.html.twig" with {"Blog": blog } %}
+			{% include 'Blog/../components/_blogs_preview_personnal_space.html.twig' with {"Blog": blog } %}
 		{% endfor %}
 	</div>
-	{% include "Blog/../components/_footer.html.twig" %}
 {% endblock %}
 

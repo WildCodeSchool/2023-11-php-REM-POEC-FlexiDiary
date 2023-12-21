@@ -1,13 +1,5 @@
 {% extends 'layout.html.twig' %}
-{% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/header_style.css">
-	<link rel="stylesheet" href="/assets/css/footer_style.css">
-{% endblock %}
-{% block header %}
-	{% include "Home/../components/_header_navbar.html.twig" %}
-{% endblock %}
 
 {% block content %}
 	{% include "Home/../privacy_policy.html.twig" %}
-	{% include "Home/../components/_footer.html.twig" %}
 {% endblock %}
