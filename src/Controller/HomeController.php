@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\BlogsManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -9,7 +11,13 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $blogManager = new BlogsManager();
+        $blogs = $blogManager->selectAll();
+
+
+        return $this->twig->render('Home/index.html.twig', [
+            "blogs" => $blogs
+        ]);
     }
     /**
      * Display privacy policy page
@@ -17,5 +25,10 @@ class HomeController extends AbstractController
     public function privacypolicy(): string
     {
         return $this->twig->render('Home/privacypolicy.html.twig');
+    }
+
+    public function login(): string
+    {
+        return $this->twig->render('Home/login.html.twig');
     }
 }
