@@ -1,11 +1,12 @@
 * {
-    --primary-bg-color: #B08FD1;
-    --secondary-color: #471974;
+    --gradiant-background : -webkit-linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
+    --primary-bg-color: #9f77b8;
+    --secondary-color: #a7366c;
     --dark-border-color: #133408;
     --typo-color:whitesmoke; 
-    --year-color-2024: #ffbe98;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 body {
     color: black;

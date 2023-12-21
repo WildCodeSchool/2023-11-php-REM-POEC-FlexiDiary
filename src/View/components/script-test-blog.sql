@@ -14,3 +14,11 @@ INSERT INTO Blogs (Title, Description, Date_creation, Background_image, idUsers)
 
 
  
+
+ INSERT INTO Tags (Tag_Name, idUsers)
+ VALUES
+  ("Fruits", 1),
+  ("Harry Styles", 1),
+  ("Programmation informatique", 1),
+  ("Jeux-vidéos", 1),
+  ("Cuisine", 1);

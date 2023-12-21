@@ -6,10 +6,11 @@
 
 {% block content %}
 	<h1>Blog  Content!</h1>
-	 <div class="list-blogs-exists">
+	<div class="list-blogs-exists">
 		{% for blog in blogs %}
 			{% include 'Blog/../components/_blogs_preview_personnal_space.html.twig' with {"Blog": blog } %}
 		{% endfor %}
+		{% include "Blog/../components/_blog_to_create.html.twig" %}
 	</div>
 {% endblock %}
 

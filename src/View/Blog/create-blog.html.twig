@@ -1,0 +1,42 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+{% endblock %}
+{% block content %}
+	<h1>Donnes une âme à ton nouveau blog!</h1>
+
+	<form method="post">
+		<div>
+			<label for="Title">Le titre de ton blog :</label>
+			<input type="text" id="Title" name="Title" required="true">
+		</div>
+		<div>
+			<label for="Description">Décris ton univers en quelques mots :
+			</label>
+			<textarea name="Description" id="Description" rows="6" required></textarea>
+		</div>
+
+		<div>
+			<label for="Typo-title">Choisis la typo pour les titres d'articles</label>
+			<select id="Typo-title" name="Typo-title" required>
+				<option class="typo1" valeur="Typo1">Typo 1</option>
+				<option class="typo2" valeur="Typo2">Typo 2</option>
+				<option valeur="Typo3">Typo 3</option>
+				<option valeur="Typo4">Typo 4</option>
+				<option valeur="Typo5">Typo 5</option>
+			</select>
+		</div>
+		<div>
+			<label for="colorRef">Couleur de référence :</label>
+			<input type="color" id="colorRef" name="colorRef" required="false">
+		</div>
+		<div>
+			<label for="visibility">En ligne : </label>
+			<input type="checkbox" name="visibility" id="visibility">
+		</div>
+		<div class="buttonsLine">
+			<button type="submit">Envoyer
+				<img src="public/assets/images/icons/icon-validate.png"></button>
+		</div>
+	</form>
+{% endblock %}
+
