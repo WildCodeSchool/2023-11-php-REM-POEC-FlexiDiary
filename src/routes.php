@@ -21,4 +21,6 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'article/create' => ['ArticleController', 'create', ['id']],
+    'login' => ['UserController','signin'],
+    'signup' => ['UserController', 'signup']
 ];

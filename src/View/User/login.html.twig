@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/login.css">
+	
+{% endblock %}
+{% block content %}
+<body>
+<div class="container">
+
+	 <form action="" class="form">
+	 	<h2>LOGIN </h2>
+	 	<input type="email" name="email" class="box" placeholder="enter email" required>
+
+	 	<input type="password" name="Password" class="box" placeholder="enter password"
+	 	>
+	 	<input type="submit" value="LOGIN IN" id="submit">
+	 	<a href="View/User/forgetpassword.html.twig">Forget Password?</a>
+	 </form>	
+</div>
+</body>
+
+{% endblock %}
