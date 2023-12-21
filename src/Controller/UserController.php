@@ -6,23 +6,35 @@ use App\Model\UserManager;
 
 class UserController extends AbstractController
 {
-    public function signin()
+    public function login(): string
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            //Clean POST data into array
-            $errors = [];
+        $errors = [];
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $credentials = array_map('trim', $_POST);
-            //form validation
-            if (empty($credentials['email'])) {
-                $errors[] = "Veuillez entrer votre email";
+            $password = "";
+            if ($credentials['email'] === '' || !filter_var($credentials['email'], FILTER_VALIDATE_EMAIL)) {
+                $errors[] = 'Veuillez saisir une addresse email valide';
             }
-            if (empty($credentials['password'])) {
-                $errors[] = "Veuillez entrer votre mot de passe";
+            $email = htmlentities($credentials['email']);
+
+            if (!empty($credentials['password'])) {
+                $password = $credentials['password'];
+            } else {
+                $errors[] = 'Veuillez saisir un mot de passe';
             }
             if (empty($errors)) {
+                $userManager = new UserManager();
+                $user = $userManager->selectOneByEmail($email);
+                if ($user && password_verify($password, $user['Password'])) {
+                    $_SESSION['userid'] = $user['idUsers'];
+                    header('Location: /');
+                    exit();
+                } else {
+                    $errors[] = "L'utilisateur n'existe pas.";
+                }
             }
         }
-        return $this->twig->render('User/signin.html.twig');
+        return $this->twig->render('User/login.html.twig');
     }
 
     public function signup()
@@ -39,7 +51,6 @@ class UserController extends AbstractController
             $credentials = array_map('trim', $_POST);
 
             $errors = $this->validate($credentials, $extension, $authorizedExtensions);
-            var_dump($errors);
             $securedCredentials['name'] = htmlentities($credentials['name']);
             $securedCredentials['email'] = htmlentities($credentials['email']);
             $securedCredentials['password'] = $credentials['password'];
@@ -48,10 +59,18 @@ class UserController extends AbstractController
             if (empty($errors)) {
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 $userManager = new userManager();
-                $userManager->insert($securedCredentials);
+                if ($userManager->insert($securedCredentials)) {
+                    $this->login();
+                }
             }
         }
         return $this->twig->render('User/signup.html.twig');
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['userid']);
+        header('Location: /');
     }
 
     private function validate(array $credentials, string $extension, array $authExtensions)

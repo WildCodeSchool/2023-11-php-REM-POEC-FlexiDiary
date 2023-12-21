@@ -20,7 +20,8 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'article/create' => ['ArticleController', 'create', ['id']],
-    'login' => ['UserController','signin'],
-    'signup' => ['UserController', 'signup']
+    'signup' => ['UserController', 'signup'],
+    'login' => ['UserController','login'],
+    'logout' => ['UserController', 'logout'],
+    'article/create' => ['ArticleController', 'create', ['id']]
 ];
