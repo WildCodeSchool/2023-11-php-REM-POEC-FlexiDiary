@@ -19,6 +19,7 @@ body
    width: 50%;
    height: auto;
    padding: 1.5rem;
+   border-radius: 20px;
 }
 
 form
@@ -47,12 +48,17 @@ form
    display: flex;
    flex-direction: column;
    width: 80%;
-   gap: .5rem;
+   gap: 1rem;
+}
+
+.form-container div:first-child
+{
+   margin: 1rem 0 .5rem 0;
 }
 
 .form-button
 {
-   margin-top: .5rem;
+   margin-top: 1rem;
    align-self: center;
    padding: 0;
    border-style: none;
