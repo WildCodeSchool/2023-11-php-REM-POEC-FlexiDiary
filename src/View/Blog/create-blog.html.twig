@@ -1,6 +1,5 @@
 {% extends 'layout.html.twig' %}
-{% block stylesheet %}
-{% endblock %}
+
 {% block content %}
 	<h1>Donnes une âme à ton nouveau blog!</h1>
 
@@ -30,7 +29,8 @@
 			<input type="color" id="colorRef" name="colorRef" required="false">
 		</div>
 		<div>
-			<label for="visibility">En ligne : </label>
+			<label for="visibility">En ligne :
+			</label>
 			<input type="checkbox" name="visibility" id="visibility">
 		</div>
 		<div class="buttonsLine">
@@ -39,4 +39,3 @@
 		</div>
 	</form>
 {% endblock %}
-
