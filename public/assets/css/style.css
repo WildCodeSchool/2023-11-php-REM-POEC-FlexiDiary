@@ -3,12 +3,13 @@
     --primary-bg-color: #9f77b8;
     --secondary-color: #a7366c;
     --dark-border-color: #133408;
-    --typo-color:whitesmoke; 
+    --typo-color:whitesmoke;
+    --dark-typo-color : #000; 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 body {
-    color: black;
-    background-color:#EFEFEF;
+    color: var(--dark-typo-color);
+    background-color:rgb(241, 240, 240) !important;
 }

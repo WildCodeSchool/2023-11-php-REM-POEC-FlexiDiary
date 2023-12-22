@@ -6,7 +6,7 @@ use PDO;
 
 class UserManager extends AbstractManager
 {
-    public const TABLE = 'users';
+    public const TABLE = 'Users';
     public function insert(array $credentials): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . static::TABLE .
