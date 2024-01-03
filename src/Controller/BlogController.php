@@ -15,9 +15,24 @@ class BlogController extends AbstractController
         $blogManager = new BlogsManager();
         $blogs = $blogManager->selectAll();
         return $this->twig->render('Blog/index.html.twig', [
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'explore' => false,
         ]);
     }
+
+    /**
+     * Display List Blogs
+     */
+    public function explorer(): string
+    {
+        $blogManager = new BlogsManager();
+        $blogs = $blogManager->selectAll();
+        return $this->twig->render('Blog/index.html.twig', [
+            'blogs' => $blogs,
+            'explore' => true,
+        ]);
+    }
+
 
     /**
      * Add a new Blog
