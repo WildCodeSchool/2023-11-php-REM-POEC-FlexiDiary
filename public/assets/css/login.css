@@ -3,18 +3,18 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-body{
-	background-color:#D9D9D9;
+body {
+	background-image: url('../images/backgroundtest2.png');
 }
 /*container*/
-.container{
+.container-login{
 	display: flex;
-	height: 500px;
-	width: 800px;
-	/*border: 1px solid black;*/
-	margin: auto;
-	margin-top: 50px;
-	
+	justify-content: center;
+	align-content: center;
+	height: 50vh;
+	width: 80vw;
+	margin-top: 5vh;
+	margin-left:10vw;
 }
 
 /* login form */
@@ -63,20 +63,6 @@ body{
 }
 .form a:hover{
 	color: #133408;
-
-}
-/*right side*/
-.side{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 50%;
-	background-color: whitesmoke;
-
-}
-.side img{
-	width: 450px;
-	height: 450px;
 
 }
 
