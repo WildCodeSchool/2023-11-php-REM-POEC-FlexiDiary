@@ -1,0 +1,131 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+header{
+	background: var(--primary-bg-color);
+	background: -moz-linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
+	background: linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
+	width: 100%;
+	max-height: 40vh;
+	min-height: 10vh;
+	text-align: center;
+	color: white;
+	padding-top: 10vh;
+	padding-bottom: 2vh;
+} 
+.button-call-to-action{
+	display: inline-block;
+	width: 10vw;
+	padding: 1vh;
+	margin: 5vh;
+	background-color: #90B877;
+	color: white;
+	font-size: 20px;
+	border-radius: 10px;
+}
+
+/* container, welcome text, blogs, tagline, reseaux sociaux */
+.container-welcome-text{
+	width: 80vw;
+	margin-left:10vw;
+	margin-top: 2vh;
+	margin-bottom: 15vh;
+	text-align: center;
+	/* display: flex;
+	flex-direction: column;
+	justify-content: space-around; */
+	height: 25vh;
+}
+.container-tagline{
+	width: 80vw;
+	margin-left:10vw;
+	margin-top: 1vh;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 5vh;
+	font-size: 1.2em;
+}
+
+.welcome-title{
+	font-size: 2.3em;
+	margin-bottom: 4vh;
+}
+
+.welcome-content{
+	font-size: 1.5em;
+	line-height: 2rem;
+}
+
+.container-blogs{
+	margin: 20px;
+	width: 100vw;
+}
+
+.row-blogs{
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	flex-wrap: wrap;
+}
+
+.card-blog-display-home{
+	background: white;
+	position: relative;
+	flex: 2;
+	max-width: 25vw;
+	height: 50vh;
+	margin: 2vh;
+	border-radius: 1vw;
+	box-shadow: 0 0 5px;
+	text-align: center;
+	color: #BF4EA2;
+	padding: 2vh;
+}
+
+.card-blog-display-home img{
+	width: auto;
+	object-fit: contain;
+	height: 60%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.card-blog-display-home p{
+	color: var(--dark-typo-color);
+	margin-top:1vh;
+	font-size: 1.1em;
+	text-align: center;
+} 
+
+
+@media(max-width:1250px){
+	blog-box{
+		width: 300px;
+	}
+}
+
+@media(max-width:1100px){
+	blog-box{
+		width: 70%;
+	}
+}
+
+@media(max-width:550px){
+	blog-box{
+		margin: 20px 10px;
+		width: 100%;
+	}
+	#blog{
+		padding: 20px;
+	}
+}
+
+
+
+

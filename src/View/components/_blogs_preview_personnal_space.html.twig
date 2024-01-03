@@ -1,4 +1,5 @@
 <div class="card-blog-preview">
+<a href="article/create?id={{ Blog.idBlog }}">
 	<div class="card-blog-box-img">
 		<img src="{{Blog.Background_image}}" alt="" class="card-blog-box-img img-blog-preview">
 	</div>
@@ -12,7 +13,7 @@
 		<img src="/assets/images/icons/icon_bookmark.png" alt="bookmark icon pour enregistrer un blog à revisiter plus tard" class="card-blog-action">
 		<img src="/assets/images/icons/icon_warningsignal.png" alt="warning icon pour signaler un blog problèmatique" class="card-blog-action">
 		{# This button need to be visible only if the user is in his personal space and he 's the owner of it !  #}
-		<img src="/assets/images/icons/icon_delete_adminonly.png" alt="garbage icon pour supprimer un blog en tant qu'administrateur" class="card-blog-action">
+		<a href="blog/delete?id={{ Blog.idBlog}}" ><img src="/assets/images/icons/icon_delete_adminonly.png" alt="garbage icon pour supprimer un blog en tant qu'administrateur" class="card-blog-action"></a>
 	</div>
+</a>
 </div>
-

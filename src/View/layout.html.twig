@@ -8,16 +8,17 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Anaheim&family=Jost:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/assets/css/style.css">
+
+		{% block stylesheet %}
+			<link rel="stylesheet" href="/assets/css/index.css">
+			<link rel="stylesheet" href="/assets/css/login.css">
+			<link rel="stylesheet" href="/assets/css/header_style.css">
+			<link rel="stylesheet" href="/assets/css/footer_style.css">
+		{% endblock %}
 		<title>
 			{% block title %}{% endblock %}
 		</title>
-
-		<link rel="stylesheet" href="/assets/css/style.css">
-		<link rel="stylesheet" href="/assets/css/header_style.css">
-		<link rel="stylesheet" href="/assets/css/footer_style.css">		
-
-		{% block stylesheet %}
-		{% endblock %}
 	</head>
 
 	<body>

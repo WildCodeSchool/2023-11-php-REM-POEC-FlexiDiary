@@ -14,9 +14,16 @@
     margin: 0;
     padding: 0;
 }
-
 a {
-    color: whitesmoke;
+    color: black;
+}
+h1, h2, h3
+{
+    font-family: var(--typo-h);
+}
+
+p{
+    font-family: var(--typo-p);
 }
 
 body {
@@ -38,11 +45,17 @@ body {
     border: 1px solid #90b877;
 }
 
-.button-secondary > a {
-    color: #90b877;
-}
 
-input[type=input],input[type=email],input[type=password]
-{
-    border: 2px solid ;
+* {
+    --gradiant-background : -webkit-linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
+    --primary-bg-color: #9f77b8;
+    --secondary-color: #a7366c;
+    --dark-border-color: #133408;
+    --typo-color:whitesmoke;
+    --dark-typo-color : #000; 
+  }
+
+body {
+    color: var(--dark-typo-color);
+    background-color:rgb(241, 240, 240) !important;
 }
