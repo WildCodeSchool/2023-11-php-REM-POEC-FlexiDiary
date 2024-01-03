@@ -8,6 +8,20 @@ class BlogsManager extends AbstractManager
 {
     public const TABLE = 'Blogs';
 
+        /**
+     * Get just the first 3 from database.
+     */
+    public function select3(string $orderBy = '', string $direction = 'ASC'): array
+    {
+        $query = 'SELECT * FROM ' . static::TABLE;
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+        $query .= ' LIMIT 3';
+
+        return $this->pdo->query($query)->fetchAll();
+    }
+
     /**
      * Insert new item in database
      */
