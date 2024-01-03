@@ -12,7 +12,7 @@ class HomeController extends AbstractController
     public function index(): string
     {
         $blogManager = new BlogsManager();
-        $blogs = $blogManager->selectAll();
+        $blogs = $blogManager->select3();
 
 
         return $this->twig->render('Home/index.html.twig', [
