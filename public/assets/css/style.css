@@ -45,6 +45,11 @@ body {
     border: 1px solid #90b877;
 }
 
+.button-secondary > a
+{
+    color: #90b877;
+}
+
 
 * {
     --gradiant-background : -webkit-linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);

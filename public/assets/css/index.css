@@ -62,12 +62,10 @@ header{
 }
 
 .container-blogs{
-	margin: 20px;
-	width: 100vw;
+	margin: 1rem;
 }
 
 .row-blogs{
-	width: 100vw;
 	display: flex;
 	flex-direction: row;
 	justify-content:space-around;
