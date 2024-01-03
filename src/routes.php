@@ -12,8 +12,10 @@ use App\Controller\BlogController;
 return [
     '' => ['HomeController', 'index',],
     'privacypolicy' => ['HomeController', 'privacypolicy'],
+    'explorer' =>  ['BlogController', 'explorer'],
     'profil' => ['BlogController', 'index'],
     'profil/blog/create' => ['BlogController', 'add', ['idUser']],
+    'blog/show' => ['BlogController', 'show', ['idBlog']],
     'blog/delete' => ['BlogController', 'delete', ['idBlog']],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
