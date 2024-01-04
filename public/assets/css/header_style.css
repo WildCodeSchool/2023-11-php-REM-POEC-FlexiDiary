@@ -1,36 +1,33 @@
-.nav{
-    background: var(--primary-bg-color);
-    background: -moz-linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
-    background: linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9f77b8",endColorstr="#a7366c",GradientType=1);
-  
-  display: block;
- }
- .navlist{
+.nav {
+    background: var(--gradient-color); 
+    background: -moz-linear-gradient(--gradient-color);
+    background: -webkit-linear-gradient(--gradient-color);
+}
+
+.navlist {
     display: flex;
     flex-direction: row;
-    font-family: Consolas, Arial, sans-serif;
-    margin: 0;
+    font-family: var(--typo-h);
+    color: white;
     padding: 1 rem 0;
     justify-content: flex-end;
     align-items: center;
-    
- }
- .navitem{
-     list-style: none;
-     margin-right: 2rem;
- }
- .navitem a{
-     text-decoration: none;
-     color: var(--typo-color);
-     font-weight: 700;
-     
- }
- .navitem:first-child{
-     margin-right: auto;
- }
- .logo-header {
-     height: 10vh;
- }
- 
+}
+
+.navitem {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+.navitem a {
+    text-decoration: none;
+    color: var(--typo-color);
+    font-weight: 700;
+}
+.navitem:first-child {
+    margin-right: auto;
+}
+.logo-header {
+    height: 10vh;
+}
+

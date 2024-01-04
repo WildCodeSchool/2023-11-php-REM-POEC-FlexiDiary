@@ -8,7 +8,7 @@ body
    display: flex;
    justify-content: center;
    width: 100vw;
-   margin: 8rem 0 8rem 0;
+   margin: 2rem 0 2rem 0;
 }
 
 .form-container
@@ -74,8 +74,68 @@ input[type=input],input[type=email],input[type=password]
    height: 30px;
 }
 
-a
+input[type=file]
 {
-color: white;
-margin: 1rem 0 1rem 0;
+   display: none;
+}
+
+.avatar
+{
+   position: relative;
+   align-self: center;
+   width: 4rem;
+   height: 4rem;
+   border-radius: 50%;
+   border: 4px solid #90b877;
+   cursor: pointer;
+}
+
+.avatar::before
+{
+   content:"";
+   position: absolute;
+   background-color: #90b877;
+   border-radius: 50%;
+   width: 1.4rem;
+   height: 1.4rem;
+   top: 10%;
+   left: 30%;
+}
+
+.avatar::after
+{
+   content:"";
+   position: absolute;
+   background-color: #90b877;
+   border-radius: 100px;
+   border-bottom-right-radius: 30px;
+   border-bottom-left-radius: 30px;
+   width: 2rem;
+   height: 1.6rem;
+   left: 24%;
+   bottom:0.1px;
+}
+
+.plus::before
+{
+   content:"";
+   position: absolute;
+   background-color: #F6F6F6;
+   width: .3rem;
+   height: 2rem;
+   left: 46%;
+   top: 26%;
+   z-index: 1;
+}
+
+.plus::after
+{
+   content:"";
+   background-color: #F6F6F6;
+   position: absolute;
+   width: 2rem;
+   height: .3rem;
+   left: 22%;
+   top: 50%;
+   z-index: 1;
 }
