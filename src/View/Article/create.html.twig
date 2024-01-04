@@ -6,31 +6,37 @@
 {% endblock %}
 
 {% block content %}
-	<form action="/article/create?id={{ idBlog }}" method="post" enctype="multipart/form-data">
-		<div class="Title">
-			<label for="Title">Le titre de l'article:</label>
-			<input type="text" id="Title" name="Title" required="true">
-		</div>
-        <div>
-            <label for="content">Ton meilleur contenu :</label>
-            <textarea name="Content" id="content" cols="30" rows="10"></textarea>
-        </div>
-        <div>
-            <label for="picture">Quelle image accompagnera tes mots ? </label>
-            <input type="file" name="picture" id="picture">
-        </div>
-        <div>
-            <label for="tags">Sujet de cet article :</label>
-            <select name="tags" id="tags">
-                {% for tag in tags %}
-                    <option value="{{tag.idTag}}">{{ tag.Tag_Name }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div>
-            <label for="visibility">Mettre en ligne immédiatement ? </label>
-            <input type="checkbox" name="visibility" id="visibility">
-        </div>
-        <button type="submit">Enregistrer</button>
-	</form>
+
+<div class="container">
+    <form action="/article/create?id={{ idBlog }}" method="post" enctype="multipart/form-data">
+    <h1>Créer Article</h1>
+<div class="fillingBox">
+	<label for="Title">Le titre de l'article:</label>
+    <br>
+	<input type="text" id="Title" name="Title" required="true">
+</div>
+<div class="fillingBox">
+    <label for="content">Ton meilleur contenu :</label>
+    <br>
+    <textarea name="Content" id="content" cols="90%" rows="10"></textarea>
+</div>
+<div class="fillingBox">
+    <label for="picture">Quelle image accompagnera tes mots ? </label>
+    <input type="file" name="picture" id="picture">
+</div>
+<div class="fillingBox">
+    <label for="tags">Sujet de cet article :</label>
+    <select name="tags" id="tags">
+        {% for tag in tags %}
+            <option value="{{tag.idTag}}">{{ tag.Tag_Name }}</option>
+        {% endfor %}
+    </select>
+</div>
+<div class="fillingBox">
+    <label for="visibility">Mettre en ligne immédiatement ? </label>
+    <input type="checkbox" name="visibility" id="visibility">
+</div>
+    <button type="submit" id="submit">Enregistrer</button>
+    </form>    
+</div>	
 {% endblock %}
