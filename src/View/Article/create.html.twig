@@ -11,7 +11,7 @@
 			<label for="Title">Le titre de l'article:</label>
 			<input type="text" id="Title" name="Title" required="true">
 		</div>
-        <div>
+        <div class="content">
             <label for="content">Ton meilleur contenu :</label>
             <textarea name="Content" id="content" cols="30" rows="10"></textarea>
         </div>
@@ -31,6 +31,7 @@
             <label for="visibility">Mettre en ligne immédiatement ? </label>
             <input type="checkbox" name="visibility" id="visibility">
         </div>
+        <input type="hidden" name="idBlog" value="{{idBlog}}" >
         <button type="submit">Enregistrer</button>
 	</form>
 {% endblock %}

@@ -2,13 +2,14 @@
 
 namespace App\Controller;
 
+use App\Model\ArticleManager;
 use App\Model\BlogsManager;
 use DateTimeImmutable;
 
 class BlogController extends AbstractController
 {
     /**
-     * Display List Blogs
+     * Display List Blogs only 3 for the landing page 
      */
     public function index(): string
     {
@@ -32,6 +33,23 @@ class BlogController extends AbstractController
             'explore' => true,
         ]);
     }
+
+    /**
+     * Show the blog
+     */
+    public function show(int $idBlog): string
+    {
+        $blogManager = new BlogsManager();
+        $blog = $blogManager->selectOneBlogById((int)$idBlog);
+        $articlesManager = new ArticleManager();
+        $articles = $articlesManager->selectAllFromOne($blog['idBlog']);
+        var_dump($articles);
+        return $this->twig->render('Blog/show-blog.html.twig', [
+            'blog' => $blog,
+            'articles' => $articles,
+        ]);
+    }
+
 
 
     /**

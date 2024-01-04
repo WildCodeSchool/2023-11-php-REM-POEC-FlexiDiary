@@ -8,7 +8,7 @@ class BlogsManager extends AbstractManager
 {
     public const TABLE = 'Blogs';
 
-        /**
+    /**
      * Get just the first 3 from database.
      */
     public function select3(string $orderBy = '', string $direction = 'ASC'): array
@@ -20,6 +20,19 @@ class BlogsManager extends AbstractManager
         $query .= ' LIMIT 3';
 
         return $this->pdo->query($query)->fetchAll();
+    }
+
+    /**
+     * Get one blog from database by ID.
+     */
+    public function selectOneBlogById(int $id): array|false
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE idBlog=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
     }
 
     /**
