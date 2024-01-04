@@ -10,11 +10,16 @@
 <div class="container">
 <div class="form-container">
 <h1 class="form-title">Inscription</h1>
-<form action="" method="post" enctype="multipart/form-data" class="register-form">
 
+	{% for error in errors %}
+		<p>
+	   	{{error }}
+		</p>
+	{% endfor %}
+
+<form action="" method="post" enctype="multipart/form-data" class="register-form">
 <div>
-    
-    <label for="imageUpload" class="avatar"><div class="plus"></div></label>    
+    <label for="imageUpload" class="avatar"><div class="plus"></div></label>   
     <input type="file" name="avatar" id="imageUpload" />
 </div>
 <div>
@@ -27,7 +32,7 @@
 </div>
 
 <div>
-  <label for="password">Mot de passe</label>    
+  <label for="password">Mot de passe</label>
     <input type="password" name="password" id="password" required/>
 </div>
 

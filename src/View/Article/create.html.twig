@@ -1,9 +1,13 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+	{{parent()}}
+	<link rel="stylesheet" href="/assets/css/article.css">
+{% endblock %}
 
 {% block content %}
 	<form action="/article/create?id={{ idBlog }}" method="post" enctype="multipart/form-data">
-		<div>
+		<div class="Title">
 			<label for="Title">Le titre de l'article:</label>
 			<input type="text" id="Title" name="Title" required="true">
 		</div>
