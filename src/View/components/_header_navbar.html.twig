@@ -1,25 +1,15 @@
 <nav class="nav">
-	<ul class="navlist">
-		<li class="navitem">
-			<a href="/"><img src="/assets/images/logo-final-flexi.png" class="logo-header" alt="logo lettre F avec une plume noir qui trace une ligne fine "></a>
-		</li>
-		<li class="navitem">
-			<a href="/explorer">EXPLORER</a>
-		</li>
-		{% if user %}
-			<li class="navitem">
-				<a href="/profil">PROFIL</a>
-			</li>
-			<li class="navitem">
-				<a href="/logout">DECONNEXION</a>
-			</li>
-		{% else %}
-			<li class="navitem">
-				<a href="/signup">INSCRIPTION</a>
-			</li>
-			<li class="navitem">
-				<a href="/login">CONNEXION</a>
-			</li>
-		{% endif %}
-	</ul>
-</nav>
+        <ul class="navlist">
+             <li class="navitem">
+             <a href="/"><img src="/assets/images/logo-final-flexi.png" class="logo-header" alt="logo lettre F avec une plume noir qui trace une ligne fine "></a>
+             </li>
+            <li class="navitem"><a href="/explorer">Explorer</a></li>
+            {% if user %}
+                <li class="navitem"><a href="/profil">Profil</a></li>
+                <li class="navitem button"><a href="/logout">Déconnexion</a></li>
+            {% else %}
+                <li class="navitem button button-secondary"><a href="/signup">Inscription</a></li>
+                <li class="navitem button"><a href="/login">Connexion</a></li>
+            {% endif %}
+        </ul>
+    </nav>

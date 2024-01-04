@@ -28,6 +28,10 @@
 .img-blog-preview{
   border-radius: 2vw;
 }
+.img-blog-preview a
+{
+  color: black;
+}
 .card-box-section-infos{
   padding: 2.5%;
 }

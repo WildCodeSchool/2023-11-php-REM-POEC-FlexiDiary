@@ -14,16 +14,19 @@ header{
 	text-align: center;
 	color: white;
 	padding-top: 10vh;
+	padding-bottom: 6vh;
 } 
-.button-call-to-action{
-	display: inline-block;
-	width: 10vw;
-	padding: 1vh;
-	margin: 5vh;
-	background-color: #90B877;
+
+#hero-title {
+	margin: 0 0 4rem 0;
+}
+
+.home-button {
+	text-decoration: none;
 	color: white;
-	font-size: 20px;
-	border-radius: 10px;
+	width: 10vw;
+	padding: 1rem;
+	margin: 2rem;
 }
 
 /* container, welcome text, blogs, tagline, reseaux sociaux */
@@ -31,10 +34,8 @@ header{
 	width: 80vw;
 	margin-left:10vw;
 	margin-top: 2vh;
+	margin-bottom: 15vh;
 	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
 	height: 25vh;
 }
 .container-tagline{
@@ -60,12 +61,10 @@ header{
 }
 
 .container-blogs{
-	margin: 20px;
-	width: 100vw;
+	margin: 1rem;
 }
 
 .row-blogs{
-	width: 100vw;
 	display: flex;
 	flex-direction: row;
 	justify-content:space-around;

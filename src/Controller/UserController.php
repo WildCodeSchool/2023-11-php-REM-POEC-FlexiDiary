@@ -9,6 +9,8 @@ class UserController extends AbstractController
     public function login(): string
     {
         $errors = [];
+        $password = "";
+
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $credentials = array_map('trim', $_POST);
             $password = "";
@@ -34,7 +36,7 @@ class UserController extends AbstractController
                 }
             }
         }
-        return $this->twig->render('User/login.html.twig', ['errors' => $errors]);
+        return $this->twig->render('User/login.html.twig');
     }
 
     public function signup()
@@ -44,10 +46,6 @@ class UserController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $uploadDir = 'upload/';
-            $baseDir = (dirname((dirname(__DIR__)))) . '/public/';
-            if (!is_dir($baseDir . '/upload')) {
-                mkdir($baseDir . '/upload', 0777);
-            }
             $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
             $uploadFile = $uploadDir . uniqid() . '.' . $extension;
             $authorizedExtensions = ['jpg', 'png', 'webp'];
@@ -59,8 +57,9 @@ class UserController extends AbstractController
             $securedCredentials['email'] = htmlentities($credentials['email']);
             $securedCredentials['password'] = $credentials['password'];
             $securedCredentials['image'] = $uploadFile;
+
             if (empty($errors)) {
-                move_uploaded_file($_FILES['avatar']['tmp_name'], $baseDir . $uploadFile);
+                move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadFile);
                 $userManager = new userManager();
                 if ($userManager->insert($securedCredentials)) {
                     $this->login();

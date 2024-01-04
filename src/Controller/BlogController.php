@@ -9,15 +9,14 @@ use DateTimeImmutable;
 class BlogController extends AbstractController
 {
     /**
-     * Display List Blogs only 3 for the landing page 
+     * Display List Blogs only 3 for the landing page
      */
     public function index(): string
     {
         $blogManager = new BlogsManager();
         $blogs = $blogManager->selectAll();
         return $this->twig->render('Blog/index.html.twig', [
-            'blogs' => $blogs,
-            'explore' => false,
+            'blogs' => $blogs
         ]);
     }
 

@@ -1,17 +1,35 @@
 {% extends 'layout.html.twig' %}
 
-{% block stylesheet %}
-		{{parent()}} </p><link rel="stylesheet" href="/assets/css/login.css">
+	{% block stylesheet %}
+		<link rel="stylesheet" href="/assets/css/login.css">
+		<link rel="stylesheet" href="/assets/css/header_style.css">
+		<link rel="stylesheet" href="/assets/css/footer_style.css">
+	{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="form-container">
+	<h1 class="form-title">Connexion</h1>
+
+	 <form action="" method="post" class="login-form">
+	
+	 	<div>
+  			<label for="email">Email</label>    
+    		<input type="input" name="email" id="email" required/>
+		</div>
+
+	 	<div>
+			<label for="password">Mot de passe</label>    
+    		<input type="password" name="password" id="password" required/>
+		</div>
+
+    <button class="button form-button" type="submit">Se connecter</button>
+
+	 	<a href="#">Mot de passe oublié ?</a>
+	 </form>
+
+</div>
+</div>
 {% endblock %}
-{% block content %}<div class="container-login">
 
-<form action="" method="post" class="form">
-	<h2>Connexion
-	</h2>
-	<input type="email" name="email" class="box" placeholder="votre email" required>
-
-	<input type="password" name="password" class="box" placeholder="votre mot de passe">
-	<input type="submit" value="se connecter" id="submit">
-	<a href="">Mot de passe oublié ?</a>
-</form></div>{% endblock %}
 
