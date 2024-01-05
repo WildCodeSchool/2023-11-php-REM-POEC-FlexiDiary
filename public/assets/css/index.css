@@ -80,11 +80,14 @@ p.welcome-content{
 	color: #BF4EA2;
 	padding: 2vh;
 }
-
-.card-blog-display-home img{
-	width: auto;
-	object-fit: contain;
+.container-img{
+	overflow : hidden;
 	height: 60%;
+	}
+.card-blog-display-home img{
+	width: 100%;
+	height: auto;
+	
 	margin-top: 15px;
 	margin-bottom: 15px;
 	
@@ -97,6 +100,7 @@ p.welcome-content{
 	text-align: center;
 } 
 .container-réseaux{
+	
 	
 	width: 80vw;
 	margin-left:10vw;
