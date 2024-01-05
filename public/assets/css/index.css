@@ -86,9 +86,9 @@ header{
 }
 
 .card-blog-display-home img{
-	width: auto;
+	width: 100%;
 	object-fit: contain;
-	height: 60%;
+	height: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
 }

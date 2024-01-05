@@ -13,8 +13,6 @@ class HomeController extends AbstractController
     {
         $blogManager = new BlogsManager();
         $blogs = $blogManager->select3();
-
-
         return $this->twig->render('Home/index.html.twig', [
             "blogs" => $blogs
         ]);
