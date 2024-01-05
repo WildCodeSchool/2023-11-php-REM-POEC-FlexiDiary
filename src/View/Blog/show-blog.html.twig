@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	{{parent()}}
+	<link rel="stylesheet" href="/assets/css/forms-blog.css">
+{% endblock %}
+
+{% block content %}
+	<h1 class="title-blog">{{blog.Title}}</h1>
+ {% for article in articles %}
+	 <p> {{article.Title}} </p>
+ {% endfor %}
+
+{% endblock %}
