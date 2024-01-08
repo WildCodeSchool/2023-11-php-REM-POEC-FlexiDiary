@@ -16,11 +16,9 @@ header{
 	padding-top: 10vh;
 	padding-bottom: 6vh;
 } 
-
 #hero-title {
 	margin: 0 0 4rem 0;
 }
-
 .home-button {
 	text-decoration: none;
 	color: white;
@@ -28,7 +26,6 @@ header{
 	padding: 1rem;
 	margin: 2rem;
 }
-
 /* container, welcome text, blogs, tagline, reseaux sociaux */
 .container-welcome-text{
 	width: 80vw;
@@ -37,6 +34,9 @@ header{
 	margin-bottom: 15vh;
 	text-align: center;
 	height: 25vh;
+}
+p.welcome-content{
+	width: calc(100% - 100px);
 }
 .container-tagline{
 	width: 80vw;
@@ -49,21 +49,17 @@ header{
 	height: 5vh;
 	font-size: 1.2em;
 }
-
 .welcome-title{
 	font-size: 2.3em;
 	margin-bottom: 4vh;
 }
-
 .welcome-content{
 	font-size: 1.5em;
 	line-height: 2rem;
 }
-
 .container-blogs{
 	margin: 1rem;
 }
-
 .row-blogs{
 	display: flex;
 	flex-direction: row;
@@ -84,10 +80,12 @@ header{
 	color: #BF4EA2;
 	padding: 2vh;
 }
-
+.container-img{
+	overflow : hidden;
+	height: 60%;
+	}
 .card-blog-display-home img{
 	width: 100%;
-	object-fit: contain;
 	height: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -99,8 +97,21 @@ header{
 	font-size: 1.1em;
 	text-align: center;
 } 
-
-
+.container-reseaux{
+	width: 80vw;
+	margin-left:10vw;
+	margin-top: 2vh;
+	margin-bottom: 15vh;
+	text-align: center;
+	height: 6vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;	
+}
+.container-reseaux img{
+	align-items: center;
+	width: 5vh;
+}
 @media(max-width:1250px){
 	blog-box{
 		width: 300px;
@@ -121,8 +132,6 @@ header{
 	#blog{
 		padding: 20px;
 	}
+	p.welcome-content{
+		width: calc(100% - 100%);
 }
-
-
-
-

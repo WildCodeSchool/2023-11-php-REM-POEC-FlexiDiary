@@ -21,16 +21,20 @@
 							 Commencez à explorer maintenant et débloquez un monde de possibilités infinies !!</p>
 			</div>
 		</div>
+		
 
 	<div class="container-blogs">
 		<div class="row-blogs">
-
 			{% for blog in blogs %}
 				{% include "Home/../components/_cardblog_display.html.twig" %}
 			{% endfor %}
 		</div>
 	</div>
-
+	<div class=container-réseaux>
+		<a href="#" ><img src="assets/images/facebook1.png" /></a>
+		<a href="#"><img src="assets/images/twiter1.png" /></a>
+	</div>
+	
 	<div class="container-tagline">
 		<p>Suivez nous sur les réseaux , partagez vos meilleurs articles , faites tournez vos passions dans vos cercles.</p>
 	</div>
@@ -40,4 +44,6 @@
 {% block footer %}
 	{% include "Home/../components/_footer.html.twig" %}
 {% endblock %}
+
+
 
