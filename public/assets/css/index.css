@@ -87,10 +87,8 @@ p.welcome-content{
 .card-blog-display-home img{
 	width: 100%;
 	height: auto;
-	
 	margin-top: 15px;
 	margin-bottom: 15px;
-	
 }
 
 .card-blog-display-home p{
@@ -99,9 +97,7 @@ p.welcome-content{
 	font-size: 1.1em;
 	text-align: center;
 } 
-.container-réseaux{
-	
-	
+.container-reseaux{
 	width: 80vw;
 	margin-left:10vw;
 	margin-top: 2vh;
@@ -112,7 +108,7 @@ p.welcome-content{
 	flex-direction: row;
 	justify-content: center;	
 }
-.container-réseaux img{
+.container-reseaux img{
 	align-items: center;
 	width: 5vh;
 }

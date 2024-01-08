@@ -22,6 +22,20 @@ class BlogsManager extends AbstractManager
         return $this->pdo->query($query)->fetchAll();
     }
 
+
+    /**
+     * Get one blog from database by ID.
+     */
+    public function selectOneBlogById(int $id): array|false
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE idBlog=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
+
     /**
      * Insert new item in database
      */
