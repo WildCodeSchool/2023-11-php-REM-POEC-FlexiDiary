@@ -12,6 +12,17 @@ class ArticleController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors = [];
+
+            $uploadDir = 'upload/';
+            $baseDir = (dirname((dirname(__DIR__)))) . '/public/';
+            if (!is_dir($baseDir . '/upload')) {
+                mkdir($baseDir . '/upload', 0777);
+            }
+            $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+            $uploadFile = $uploadDir . uniqid() . '.' . $extension;
+            $authorizedExtensions = ['jpg', 'png', 'webp'];
+
+            
             $newArticle = array_map('trim', $_POST);
             if (strlen($newArticle['Title']) === 0  || strlen($newArticle['Title']) > 255) {
                 $errors[] = "Le titre de l'article doit faire au minimum 2 caractères et maximum 255 caractères";
