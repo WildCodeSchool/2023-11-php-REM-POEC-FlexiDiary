@@ -1,5 +1,5 @@
 <div class="card-blog-preview">
-	<a href="article/create?id={{ Blog.idBlog }}">
+
 		<div class="card-blog-box-img">
 			<img src="{{Blog.Background_image}}" alt="" class="card-blog-box-img img-blog-preview">
 		</div>
@@ -10,15 +10,15 @@
 			</p>
 		</div>
 		<div class="card-blog-icon-action">
-			<img
-			src="/assets/images/icons/icon_eye.png" alt=" eye icon pour voir le blog en ligne" class="card-blog-action">
+			<a href="blog/show?idBlog={{ Blog.idBlog }}"><img src="/assets/images/icons/eye-regular.svg" alt="oeil pour voir le blog en ligne" class="card-blog-action"><a/>
+			<a href="article/create?id={{ Blog.idBlog }}"><img src="/assets/images/icons/pen-to-square-solid.svg" alt="stylo pour créer un article pour ce blog" class="card-blog-action"></a>
 			{# This button need to be visible only if the users is in the explorer mode and he's not the owner ! #}
 			{% if explore %}
-				<img src="/assets/images/icons/icon_bookmark.png" alt="bookmark icon pour enregistrer un blog à revisiter plus tard" class="card-blog-action">
+				<img src="/assets/images/icons/icon_bookmark.png" alt="bookmark icon pour enregistrer un blog" class="card-blog-action">
 			{% endif %}
 			{# <img src="/assets/images/icons/icon_warningsignal.png" alt="warning icon pour signaler un blog problèmatique" class="card-blog-action"> #}
 			{# This button need to be visible only if the user is in his personal space and he 's the owner of it !  #}
-			<a href="blog/delete?id={{ Blog.idBlog}}"><img src="/assets/images/icons/icon_delete_adminonly.png" alt="garbage icon pour supprimer un blog en tant qu'administrateur" class="card-blog-action"></a>
+			<a href="blog/delete?id={{ Blog.idBlog}}"><img src="/assets/images/icons/xmark-solid.svg" alt="croix pour supprimer un blog" class="card-blog-action card-blog-delete"></a>
 		</div>
-	</a>
+
 </div>
