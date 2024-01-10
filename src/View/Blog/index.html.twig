@@ -6,7 +6,12 @@
 {% endblock %}
 
 {% block content %}
-	<h1>Blog  Content!</h1>
+{{idUsers}}
+{% if explore == false %}
+	{% if user %}
+	<h1>Mes blogs !</h1>
+	{% endif %}
+{% endif %}
 	<div class="list-blogs-exists">
 		{% for blog in blogs %}
 			{% include 'Blog/../components/_blogs_preview_personnal_space.html.twig' with {"Blog": blog } %}

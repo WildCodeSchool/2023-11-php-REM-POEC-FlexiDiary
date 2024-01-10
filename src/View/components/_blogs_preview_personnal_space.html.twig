@@ -12,15 +12,12 @@
 		<div class="card-blog-icon-action">
 			<a href="blog/show?idBlog={{ Blog.idBlog }}"><img src="/assets/images/icons/eye-regular.svg" alt="oeil pour voir le blog en ligne" class="card-blog-action"><a/>
 			{# This button need to be visible only if the users is in the explorer mode and he's not the owner ! #}
-			{% if explore %}
 
-				<a href="#"><img src="/assets/images/icons/bookmark-regular.svg" alt="bookmark icon pour enregistrer un blog" class="card-blog-action"></a>
-				<a href="#"><img src="/assets/images/icons/triangle-exclamation-solid.svg" alt="warn icon pour signaler un blog" class="card-blog-action card-blog-highlight"></a>
 				{% if user %}
-				<a href="article/create?id={{ Blog.idBlog }}"><img src="/assets/images/icons/pen-to-square-solid.svg" alt="stylo pour créer un article pour ce blog" class="card-blog-action"></a>
-				<a href="blog/delete?id={{ Blog.idBlog}}"><img src="/assets/images/icons/xmark-solid.svg" alt="croix pour supprimer un blog" class="card-blog-action card-blog-highlight"></a>
+					<a href="article/create?id={{ Blog.idBlog }}"><img src="/assets/images/icons/pen-to-square-solid.svg" alt="stylo pour créer un article pour ce blog" class="card-blog-action"></a>
+					<a href="blog/delete?id={{ Blog.idBlog}}"><img src="/assets/images/icons/xmark-solid.svg" alt="croix pour supprimer un blog" class="card-blog-action card-blog-highlight"></a>
 				{% endif %}
-			{% endif %}
+
 		</div>
 
 </div>
