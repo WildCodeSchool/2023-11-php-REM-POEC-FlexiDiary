@@ -43,7 +43,6 @@ class BlogController extends AbstractController
         $blog = $blogManager->selectOneBlogById((int)$idBlog);
         $articlesManager = new ArticleManager();
         $articles = $articlesManager->selectAllFromOne($blog['idBlog']);
-        var_dump($articles);
         return $this->twig->render('Blog/show-blog.html.twig', [
             'blog' => $blog,
             'articles' => $articles,

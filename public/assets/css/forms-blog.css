@@ -7,6 +7,7 @@
   margin: auto;
   margin-top: 2vh; 
   padding-bottom: 3vh;
+  margin-bottom: 20vh;
 }
 .title-form{
   text-align: center;
@@ -28,7 +29,7 @@
   height: 100%;
   align-items: center;
   background:linear-gradient(#9F77B8, #9F4EA2, #A7366C);
-  border-radius: 15px; 
+  border-radius: 15px;
 }
 .form-section-description, .form-section-ui, .form-section-typo, .form-section-colorref, .form-section-visibility{
   padding: 12px;
