@@ -52,7 +52,7 @@ class BlogsManager extends AbstractManager
     /**
      * Insert new item in database
      */
-    public function insert(array $blog, string $dateCreationFormat, int $idUser): bool
+    public function insert(array $blog, string $dateCreationFormat, int $idUser): int | bool
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
         (Title, Description, Date_creation, Visible, Background_color, Typo_title, idUsers) 
@@ -86,7 +86,10 @@ class BlogsManager extends AbstractManager
      */
     public function delete(int $id): void
     {
-        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM Articles WHERE idBlog=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
         $statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE idBlog=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();

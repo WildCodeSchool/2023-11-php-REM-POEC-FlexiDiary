@@ -68,7 +68,7 @@ class BlogController extends AbstractController
     /**
      * Add a new Blog
      */
-    public function add(): ?string
+    public function add($idUser): ?string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
@@ -86,8 +86,7 @@ class BlogController extends AbstractController
                 $blogManager = new BlogsManager();
                 $dateCreation = new DateTimeImmutable('now');
                 $dateFormat = $dateCreation->format("Y-m-d");
-                $idBlog = $blogManager->insert($newBlog, $dateFormat, 1);
-
+                $idBlog = $blogManager->insert($newBlog, $dateFormat, $idUser);
                 header('Location:/article/create?id=' . $idBlog);
                 return null;
             }
@@ -104,9 +103,10 @@ class BlogController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = trim($_GET['id']);
+            $idUser = $_SESSION['userid'];
             $blogManager = new BlogsManager();
             $blogManager->delete((int)$id);
-            header('Location:/profil');
+            header('Location:/profil?idUser=' . $idUser);
         }
     }
 }

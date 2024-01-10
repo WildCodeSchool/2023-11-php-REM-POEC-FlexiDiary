@@ -42,7 +42,7 @@ class ArticleController extends AbstractController
                 $dateFormat = $dateCreation->format("Y-m-d");
                 $article = new ArticleManager();
                 $article->insert($dataArticleSecure, $dateFormat, $imageArticle, $idBlog);
-                header('Location:/blog/show?idBlog=' . $idBlog);
+                header('Location: /blog/show?idBlog=' . $idBlog);
                 return null;
             }
         }
