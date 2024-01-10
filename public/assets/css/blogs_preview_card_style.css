@@ -47,9 +47,13 @@
 }
 
 .card-blog-action{
-  width: 1.7vw;
-  height: auto;
+  width: 60%;
+  height: 80%;
   margin-left: 1vw;
+}
+
+.card-blog-delete{
+  filter: invert(28%) sepia(88%) saturate(7450%) hue-rotate(356deg) brightness(94%) contrast(118%);
 }
 
 .card-blog-action-create{
