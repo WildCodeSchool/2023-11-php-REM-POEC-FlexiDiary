@@ -8,21 +8,22 @@ use DateTimeImmutable;
 
 class ArticleController extends AbstractController
 {
-    public function create(string $idBlog): ?string
+    public function create(int $idBlog): ?string
     {
+        $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $errors = [];
-
             $uploadDir = 'upload/';
             $baseDir = (dirname((dirname(__DIR__)))) . '/public/';
             if (!is_dir($baseDir . '/upload')) {
                 mkdir($baseDir . '/upload', 0777);
             }
-            $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+            $extension = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION);
             $uploadFile = $uploadDir . uniqid() . '.' . $extension;
-            $authorizedExtensions = ['jpg', 'png', 'webp'];
-
-            
+            $authorizedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+            $maxFileSize = 10000000;
+            if ($_FILES['picture']['error'] !== 0) {
+                $errors[] = "Erreur de transfert de fichier. L'article n'a pas été ajouté.";
+            }
             $newArticle = array_map('trim', $_POST);
             if (strlen($newArticle['Title']) === 0  || strlen($newArticle['Title']) > 255) {
                 $errors[] = "Le titre de l'article doit faire au minimum 2 caractères et maximum 255 caractères";
@@ -30,8 +31,14 @@ class ArticleController extends AbstractController
             if (strlen($newArticle['Content']) === 0) {
                 $errors[] = "le contenu de l'article ne peut pas être vide.";
             }
-            if (!isset($newArticle['idBlog'])) {
-                $errors[] = "l'id du blog est manquant";
+            if (!in_array($extension, $authorizedExtensions)) {
+                $errors[] = 'Selectionnez une image de type JPG, JPEG, PNG, OU WEBP.';
+            }
+            if (
+                file_exists($_FILES['picture']['tmp_name']) &&
+                filesize($_FILES['picture']['tmp_name']) > $maxFileSize
+            ) {
+                $errors[] = "Votre image est trop lourde 1Mo max.";
             }
             if (isset($newArticle['visibility'])) {
                 $newArticle['visibility'] = true;
@@ -41,25 +48,23 @@ class ArticleController extends AbstractController
             if (!isset($newArticle['tags'])) {
                 $errors[] = " Tu dois ranger ton article dans une catégorie !";
             }
+            if (!move_uploaded_file($_FILES['picture']['tmp_name'], $baseDir . $uploadFile)) {
+                $errors[] = $baseDir . $uploadFile;
+            }
             if (empty($errors)) {
+                $imageArticle = $uploadFile;
                 $dateCreation = new DateTimeImmutable('now');
                 $dateFormat = $dateCreation->format("Y-m-d");
                 $article = new ArticleManager();
-                $article->insert($newArticle, $dateFormat);
+                $article->insert($newArticle, $dateFormat, $imageArticle, $idBlog);
                 header('Location:/blog/show?idBlog=' . $idBlog);
                 return null;
             }
-            /*Image :
-            $_FILES[]
-            ->move
-            ->récupère le chemin du fichier
-            ->BDD
-            ->On fait quoi ? =>Redirection ?  Affichage de l'article ?
-            */
         }
         $tagsManager = new TagManager();
         $tags = $tagsManager->selectAll();
         return $this->twig->render('Article/create.html.twig', [
+            'errors' => $errors,
             'tags' => $tags,
             'idBlog' => $idBlog
         ]);

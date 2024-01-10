@@ -18,6 +18,7 @@ class BlogController extends AbstractController
         return $this->twig->render('Blog/index.html.twig', [
             'blogs' => $blogs,
             'explore' => false,
+            'owner' => false,
         ]);
     }
 
@@ -31,6 +32,21 @@ class BlogController extends AbstractController
         return $this->twig->render('Blog/index.html.twig', [
             'blogs' => $blogs,
             'explore' => true,
+            'owner' => false,
+        ]);
+    }
+
+    /**
+     * Display List Blogs by User Connected
+     */
+    public function blogsOfUser($idUser): string
+    {
+        $blogManager = new BlogsManager();
+        $blogs = $blogManager->selectBlogsOfUser($idUser);
+        return $this->twig->render('Blog/index.html.twig', [
+            'blogs' => $blogs,
+            'explore' => false,
+            'owner' => true,
         ]);
     }
 
@@ -43,7 +59,6 @@ class BlogController extends AbstractController
         $blog = $blogManager->selectOneBlogById((int)$idBlog);
         $articlesManager = new ArticleManager();
         $articles = $articlesManager->selectAllFromOne($blog['idBlog']);
-        var_dump($articles);
         return $this->twig->render('Blog/show-blog.html.twig', [
             'blog' => $blog,
             'articles' => $articles,

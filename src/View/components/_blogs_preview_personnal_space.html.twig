@@ -10,10 +10,12 @@
 			</p>
 		</div>
 		<div class="card-blog-icon-action">
-			<img
-			src="/assets/images/icons/icon_eye.png" alt=" eye icon pour voir le blog en ligne" class="card-blog-action">
+			<a href="blog/show?idBlog={{Blog.idBlog}}">
+				<img src="/assets/images/icons/icon_eye.png" alt=" eye icon pour voir le blog en ligne" class="card-blog-action">
+			</a>
 			{# This button need to be visible only if the users is in the explorer mode and he's not the owner ! #}
 			{% if explore %}
+				{# TODO : créer un espace dans le profil pour retrouver les blogs enregistrés  #}
 				<img src="/assets/images/icons/icon_bookmark.png" alt="bookmark icon pour enregistrer un blog à revisiter plus tard" class="card-blog-action">
 			{% endif %}
 			{# <img src="/assets/images/icons/icon_warningsignal.png" alt="warning icon pour signaler un blog problèmatique" class="card-blog-action"> #}
@@ -22,3 +24,4 @@
 		</div>
 	</a>
 </div>
+
