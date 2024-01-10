@@ -5,7 +5,7 @@
              </li>
             <li class="navitem"><a href="/explorer">Explorer</a></li>
             {% if user %}
-                <li class="navitem"><a href="/profil">{{user.Name}}</a></li>
+                <li class="navitem"><a href="/profil?idUser={{user.idUsers}}">{{user.Name}}</a></li>
                 <li class="navitem button"><a href="/logout">Déconnexion</a></li>
             {% else %}
                 <li class="navitem button button-secondary"><a href="/signup">Inscription</a></li>

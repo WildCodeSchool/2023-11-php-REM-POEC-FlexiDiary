@@ -1,0 +1,39 @@
+.title-blog {
+  font-size: 1.8em;
+  font-family: var(--typo-h);
+  color: black;
+  margin-bottom: 2vh;
+}
+
+.article-title {
+  font-size: 1.8em;
+  color: var(--secondary-color);
+  margin-bottom: 2vh;
+}
+.article-date{ 
+  font-size: 1.1em;
+  color: var(--secondary-color);
+}
+.article-section {
+  border-bottom: 1px solid darkmagenta;
+}
+.article-section-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.article-image {
+  width: 25vw;
+  height: auto;
+  margin-bottom: 5vh;
+}
+.article-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60vw;
+  margin-left: 2vw;
+  font-family: var(--typo-p);
+  margin-bottom: 10vh;
+}

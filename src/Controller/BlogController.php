@@ -18,6 +18,7 @@ class BlogController extends AbstractController
         return $this->twig->render('Blog/index.html.twig', [
             'blogs' => $blogs,
             'explore' => false,
+            'owner' => false,
         ]);
     }
 
@@ -31,6 +32,21 @@ class BlogController extends AbstractController
         return $this->twig->render('Blog/index.html.twig', [
             'blogs' => $blogs,
             'explore' => true,
+            'owner' => false,
+        ]);
+    }
+
+    /**
+     * Display List Blogs by User Connected
+     */
+    public function blogsOfUser($idUser): string
+    {
+        $blogManager = new BlogsManager();
+        $blogs = $blogManager->selectBlogsOfUser($idUser);
+        return $this->twig->render('Blog/index.html.twig', [
+            'blogs' => $blogs,
+            'explore' => false,
+            'owner' => true,
         ]);
     }
 
@@ -43,7 +59,6 @@ class BlogController extends AbstractController
         $blog = $blogManager->selectOneBlogById((int)$idBlog);
         $articlesManager = new ArticleManager();
         $articles = $articlesManager->selectAllFromOne($blog['idBlog']);
-        var_dump($articles);
         return $this->twig->render('Blog/show-blog.html.twig', [
             'blog' => $blog,
             'articles' => $articles,
@@ -53,7 +68,7 @@ class BlogController extends AbstractController
     /**
      * Add a new Blog
      */
-    public function add(): ?string
+    public function add($idUser): ?string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
@@ -71,8 +86,7 @@ class BlogController extends AbstractController
                 $blogManager = new BlogsManager();
                 $dateCreation = new DateTimeImmutable('now');
                 $dateFormat = $dateCreation->format("Y-m-d");
-                $idBlog = $blogManager->insert($newBlog, $dateFormat, 1);
-
+                $idBlog = $blogManager->insert($newBlog, $dateFormat, $idUser);
                 header('Location:/article/create?id=' . $idBlog);
                 return null;
             }
@@ -89,9 +103,10 @@ class BlogController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = trim($_GET['id']);
+            $idUser = $_SESSION['userid'];
             $blogManager = new BlogsManager();
             $blogManager->delete((int)$id);
-            header('Location:/profil');
+            header('Location:/profil?idUser=' . $idUser);
         }
     }
 }

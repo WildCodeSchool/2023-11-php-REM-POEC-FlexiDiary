@@ -1,5 +1,4 @@
 <div class="card-blog-preview">
-
 		<div class="card-blog-box-img">
 			<img src="{{Blog.Background_image}}" alt="" class="card-blog-box-img img-blog-preview">
 		</div>
@@ -12,12 +11,10 @@
 		<div class="card-blog-icon-action">
 			<a href="blog/show?idBlog={{ Blog.idBlog }}"><img src="/assets/images/icons/eye-regular.svg" alt="oeil pour voir le blog en ligne" class="card-blog-action"><a/>
 			{# This button need to be visible only if the users is in the explorer mode and he's not the owner ! #}
-
-				{% if user %}
+				{% if user.idUsers == blog.idUsers %}
 					<a href="article/create?id={{ Blog.idBlog }}"><img src="/assets/images/icons/pen-to-square-solid.svg" alt="stylo pour créer un article pour ce blog" class="card-blog-action"></a>
 					<a href="blog/delete?id={{ Blog.idBlog}}"><img src="/assets/images/icons/xmark-solid.svg" alt="croix pour supprimer un blog" class="card-blog-action card-blog-highlight"></a>
 				{% endif %}
-
 		</div>
-
 </div>
+

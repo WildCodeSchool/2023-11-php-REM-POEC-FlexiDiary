@@ -1,13 +1,23 @@
 {% extends 'layout.html.twig' %}
 {% block stylesheet %}
 	{{parent()}}
-	<link rel="stylesheet" href="/assets/css/forms-blog.css">
+	<link rel="stylesheet" href="/assets/css/articles-display.css">
 {% endblock %}
 
 {% block content %}
-	<h1 class="title-blog">{{blog.Title}}</h1>
- {% for article in articles %}
-	 <p> {{article.Title}} </p>
- {% endfor %}
+	<h1 class="title-blog" style="background-color: {{blog.Background_color}}"> {{blog.Title}}  </h1>
+	{% for article in articles %}
+		{% if article.Visible %}
+			<div class="article-section">
+				<h2 class="article-title">{{article.Title}}</h2>
+				<p class="article-date">{{article.Date}}</p>
+				<div class="article-section-content">
+					<img class="article-image" src="/{{article.Image}}"/>
+					<p class="article-content">{{article.Content}}</p>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
 
 {% endblock %}
+

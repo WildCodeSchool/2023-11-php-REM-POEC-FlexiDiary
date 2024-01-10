@@ -112,6 +112,9 @@ p.welcome-content{
 	align-items: center;
 	width: 5vh;
 }
+.link-blog-home{
+	text-decoration-line: none;
+}
 @media(max-width:1250px){
 	blog-box{
 		width: 300px;
