@@ -5,55 +5,55 @@
 {% endblock %}
 
 {% block content %}
-	<h1 class="title-form">Donnes une âme à ton nouveau blog!</h1>
-
-	<form method="post" class="form-create-blog">
-		<div class="form-section-title">
-			<label for="Title">Le titre de ton blog :</label>
-			<input class="input-title" type="text" id="Title" name="Title" required="true">
+<h1 class="title-form">Donnes une aime à ton nouveau blog!</h1>
+<div class="container">
+<form method="post" class="form-create-blog">
+	<div class="form-section-title">
+		<label for="Title">Le titre de ton blog :</label><br>
+		<input class="input-title" type="text" id="Title" name="Title" required="true">
+	</div>
+	<div class="form-section-description">
+		<label for="Description">Décris ton univers en quelques mots :
+		</label>
+		<textarea class="input-description" name="Description" id="Description" cols="80%" rows="10" required></textarea>
+	</div>
+	<div class="form-section-ui">
+		<div class="form-section-typo">
+			<label for="Typo-title">Choisis la typo pour les titres d'articles</label><br>
+			<select class="input-typo" class="typo1" id="Typo-title" name="Typo-title" required>
+				<option value="">Select</option>
+				<option value="Serif Fonts" style="font-weight: bold; background-color: #EEEEEE">Serif Fonts</option>
+				<option value="Georgia,serif" style="font-family: Georgia,serif">Georgia</option>
+				<option value="Palatino Linotype,Book Antiqua,Palatino,serif" style="font-family: Palatino Linotype,Book Antiqua,Palatino,serif">Palatino Linotype</option>
+				<option value="Times New Roman,Times,serif" style="font-family: Times New Roman,Times,serif">Times New Roman</option>
+				<option value="Sans-Serif Fonts" style="font-weight: bold; background-color: #EEEEEE">Sans-Serif Fonts</option>
+				<option value="Arial,Helvetica,sans-serif" style="font-family: Arial,Helvetica,sans-serif">Arial</option>
+				<option value="Arial Black,Gadget,sans-serif" style="font-family: Arial Black,Gadget,sans-serif">Arial Black</option>
+				<option value="Comic Sans MS,cursive,sans-serif" style="font-family: Comic Sans MS,cursive,sans-serif">Comic Sans MS</option>
+				<option value="Impact,Charcoal,sans-serif" style="font-family: Impact,Charcoal,sans-serif">Impact</option>
+				<option value="Lucida Sans Unicode,Lucida Grande,sans-serif" style="font-family: Lucida Sans Unicode,Lucida Grande,sans-serif">Lucida Sans Unicode</option>
+				<option selected="selected" value="Tahoma,Geneva,sans-serif" style="font-family: Tahoma,Geneva,sans-serif">Tahoma</option>
+				<option value="Trebuchet MS,Helvetica,sans-serif" style="font-family: Trebuchet MS,Helvetica,sans-serif">Trebuchet MS</option>
+				<option value="Verdana,Geneva,sans-serif" style="font-family: Verdana,Geneva,sans-serif">Verdana</option>
+				<option value="Monospace Fonts" style="font-weight: bold; background-color: #EEEEEE">Monospace Fonts</option>
+				<option value="Courier New,Courier,monospace" style="font-family: Courier New,Courier,monospace">Courier New</option>
+				<option value="Lucida Console,Monaco,monospace" style="font-family: Lucida Console,Monaco,monospace">Lucida Console</option>
+			</select>
 		</div>
-		<div class="form-section-description">
-			<label for="Description">Décris ton univers en quelques mots :
-			</label>
-			<textarea class="input-description" name="Description" id="Description" rows="6" required></textarea>
+		<div class="form-section-colorref">
+			<label for="colorRef">Couleur de référence :</label>
+			<input class="input-color-picker" type="color" id="colorRef" name="colorRef" required="false">
 		</div>
-		<div class="form-section-ui">
-			<div class="form-section-typo">
-				<label for="Typo-title">Choisis la typo pour les titres d'articles</label>
-				<select class="input-typo" class="typo1" id="Typo-title" name="Typo-title" required>
-					<option value="">Select</option>
-					<option value="Serif Fonts" style="font-weight: bold; background-color: #EEEEEE">Serif Fonts</option>
-					<option value="Georgia,serif" style="font-family: Georgia,serif">Georgia</option>
-					<option value="Palatino Linotype,Book Antiqua,Palatino,serif" style="font-family: Palatino Linotype,Book Antiqua,Palatino,serif">Palatino Linotype</option>
-					<option value="Times New Roman,Times,serif" style="font-family: Times New Roman,Times,serif">Times New Roman</option>
-					<option value="Sans-Serif Fonts" style="font-weight: bold; background-color: #EEEEEE">Sans-Serif Fonts</option>
-					<option value="Arial,Helvetica,sans-serif" style="font-family: Arial,Helvetica,sans-serif">Arial</option>
-					<option value="Arial Black,Gadget,sans-serif" style="font-family: Arial Black,Gadget,sans-serif">Arial Black</option>
-					<option value="Comic Sans MS,cursive,sans-serif" style="font-family: Comic Sans MS,cursive,sans-serif">Comic Sans MS</option>
-					<option value="Impact,Charcoal,sans-serif" style="font-family: Impact,Charcoal,sans-serif">Impact</option>
-					<option value="Lucida Sans Unicode,Lucida Grande,sans-serif" style="font-family: Lucida Sans Unicode,Lucida Grande,sans-serif">Lucida Sans Unicode</option>
-					<option selected="selected" value="Tahoma,Geneva,sans-serif" style="font-family: Tahoma,Geneva,sans-serif">Tahoma</option>
-					<option value="Trebuchet MS,Helvetica,sans-serif" style="font-family: Trebuchet MS,Helvetica,sans-serif">Trebuchet MS</option>
-					<option value="Verdana,Geneva,sans-serif" style="font-family: Verdana,Geneva,sans-serif">Verdana</option>
-					<option value="Monospace Fonts" style="font-weight: bold; background-color: #EEEEEE">Monospace Fonts</option>
-					<option value="Courier New,Courier,monospace" style="font-family: Courier New,Courier,monospace">Courier New</option>
-					<option value="Lucida Console,Monaco,monospace" style="font-family: Lucida Console,Monaco,monospace">Lucida Console</option>
-				</select>
-			</div>
-			<div class="form-section-colorref">
-				<label for="colorRef">Couleur de référence :</label>
-				<input class="input-color-picker" type="color" id="colorRef" name="colorRef" required="false">
-			</div>
-		</div>
-		<div class="form-section-visibility">
-			<label for="visibility">En ligne :
-			</label>
-			<input class="input-checkbock-visibility" type="checkbox" name="visibility" id="visibility">
-		</div>
-		<div class="buttonsLine">
-			<button type="submit">Envoyer
-				<img src="public/assets/images/icons/icon-validate.png"></button>
-		</div>
-	</form>
+	</div>
+	<div class="form-section-visibility">
+		<label for="visibility">En ligne :
+		</label>
+		<input class="input-checkbock-visibility" type="checkbox" name="visibility" id="visibility">
+	</div>
+	<div class="buttonsLine">
+		<button type="submit" id="submit">Envoyer</button>
+	</div>
+</form>
+</div>	
 {% endblock %}
 
