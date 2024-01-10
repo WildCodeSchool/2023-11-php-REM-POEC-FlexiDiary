@@ -37,6 +37,19 @@ class BlogsManager extends AbstractManager
     }
 
     /**
+     * Get alls blogs from database by ID User.
+     */
+    public function selectBlogsOfUser(int $idUser): array|false
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE idUsers=:id");
+        $statement->bindValue('id', $idUser, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
+    /**
      * Insert new item in database
      */
     public function insert(array $blog, string $dateCreationFormat, int $idUser): bool
@@ -60,7 +73,7 @@ class BlogsManager extends AbstractManager
      */
     public function update(array $item): bool
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE idBlog=:id");
         $statement->bindValue('id', $item['id'], PDO::PARAM_INT);
         $statement->bindValue('title', $item['title'], PDO::PARAM_STR);
 

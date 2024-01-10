@@ -14,6 +14,7 @@
 			<a href="article/create?id={{ Blog.idBlog }}"><img src="/assets/images/icons/pen-to-square-solid.svg" alt="stylo pour créer un article pour ce blog" class="card-blog-action"></a>
 			{# This button need to be visible only if the users is in the explorer mode and he's not the owner ! #}
 			{% if explore %}
+				{# TODO : créer un espace dans le profil pour retrouver les blogs enregistrés  #}
 				<img src="/assets/images/icons/icon_bookmark.png" alt="bookmark icon pour enregistrer un blog" class="card-blog-action">
 			{% endif %}
 			{# <img src="/assets/images/icons/icon_warningsignal.png" alt="warning icon pour signaler un blog problèmatique" class="card-blog-action"> #}
@@ -22,3 +23,4 @@
 		</div>
 
 </div>
+

@@ -2,42 +2,48 @@
 
 {% block stylesheet %}
 	{{parent()}}
-	<link rel="stylesheet" href="/assets/css/article.css">
+	<link rel="stylesheet" href="/assets/css/article-form.css">
 {% endblock %}
 
 {% block content %}
-
-<div class="container">
-    <form action="/article/create?id={{ idBlog }}" method="post" enctype="multipart/form-data">
-    <h1>Créer Article</h1>
-<div class="fillingBox">
-	<label for="Title">Le titre de l'article:</label>
-    <br>
-	<input type="text" id="Title" name="Title" required="true">
-</div>
-<div class="fillingBox">
-    <label for="content">Ton meilleur contenu :</label>
-    <br>
-    <textarea name="Content" id="content" cols="90%" rows="10"></textarea>
-</div>
-<div class="fillingBox">
-    <label for="picture">Quelle image accompagnera tes mots ? </label>
-    <input type="file" name="picture" id="picture">
-</div>
-<div class="fillingBox">
-    <label for="tags">Sujet de cet article :</label>
-    <select name="tags" id="tags">
-        {% for tag in tags %}
-            <option value="{{tag.idTag}}">{{ tag.Tag_Name }}</option>
-        {% endfor %}
-    </select>
-</div>
-<div class="fillingBox">
-    <label for="visibility">Mettre en ligne immédiatement ? </label>
-    <input type="checkbox" name="visibility" id="visibility">
-</div>
-    <button type="submit" id="submit">Enregistrer</button>
-    </form>    
-</div>	
+	<div>
+		{% for error in errors %}
+			<p>{{error}}</p>
+		{% endfor %}
+	</div>
+	<div class="container">
+		<form action="/article/create?id={{ idBlog }}" method="post" enctype="multipart/form-data">
+			<h1>Créer Article</h1>
+			<div class="fillingBox">
+				<label for="Title">Le titre de l'article:</label>
+				<br>
+				<input type="text" id="Title" name="Title" required="true">
+			</div>
+			<div class="fillingBox">
+				<label for="content">Ton meilleur contenu :</label>
+				<br>
+				<textarea name="Content" id="content" cols="90%" rows="10"></textarea>
+			</div>
+			<div class="fillingBox">
+				<label for="picture">Quelle image accompagnera tes mots ?
+				</label>
+				<input type="file" name="picture" id="picture">
+			</div>
+			<div class="fillingBox">
+				<label for="tags">Sujet de cet article :</label>
+				<select name="tags" id="tags">
+					{% for tag in tags %}
+						<option value="{{tag.idTag}}">{{ tag.Tag_Name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="fillingBox">
+				<label for="visibility">Mettre en ligne immédiatement ?
+				</label>
+				<input type="checkbox" name="visibility" id="visibility">
+			</div>
+			<button type="submit" id="submit">Enregistrer</button>
+		</form>
+	</div>
 {% endblock %}
 

@@ -14,7 +14,7 @@ return [
     'login' => ['UserController','login'],
     'logout' => ['UserController', 'logout'],
     'explorer' =>  ['BlogController', 'explorer'],
-    'profil' => ['BlogController', 'index'],
+    'profil' => ['BlogController', 'blogsOfUser', ['idUser']],
     'profil/blog/create' => ['BlogController', 'add', ['idUser']],
     'blog/show' => ['BlogController', 'show', ['idBlog']],
     'blog/delete' => ['BlogController', 'delete', ['idBlog']],
