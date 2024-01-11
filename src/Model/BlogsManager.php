@@ -52,16 +52,18 @@ class BlogsManager extends AbstractManager
     /**
      * Insert new item in database
      */
-    public function insert(array $blog, string $dateCreationFormat, int $idUser): int | bool
+    public function insert(array $blog, string $dateCreationFormat, int $idUser, string $image): int | bool
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
-        (Title, Description, Date_creation, Visible, Background_color, Typo_title, idUsers) 
-        VALUES (:Title, :Description, :Date_creation, :Visible, :Background_color, :Typotitle, :idUsers)");
+        (Title, Description, Date_creation, Visible, Background_color, Background_image, Typo_title, idUsers) 
+        VALUES (:Title, :Description, :Date_creation, :Visible, 
+        :Background_color, :Background_image, :Typotitle, :idUsers)");
         $statement->bindValue(':Title', $blog['Title'], PDO::PARAM_STR);
         $statement->bindValue(':Description', $blog['Description'], PDO::PARAM_STR);
         $statement->bindValue(':Date_creation', $dateCreationFormat, PDO::PARAM_STR);
         $statement->bindValue(':Visible', $blog['visibility'], PDO::PARAM_BOOL);
         $statement->bindValue(':Background_color', $blog['colorRef'], PDO::PARAM_STR);
+        $statement->bindValue(':Background_image', $image, PDO::PARAM_STR);
         $statement->bindValue(':Typotitle', $blog['Typo-title'], PDO::PARAM_STR);
         $statement->bindValue(':idUsers', $idUser, PDO::PARAM_INT);
         $statement->execute();

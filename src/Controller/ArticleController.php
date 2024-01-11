@@ -22,6 +22,7 @@ class ArticleController extends AbstractController
             $authorizedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
             $newArticle = array_map('trim', $_POST);
 
+
             if (isset($newArticle['visibility'])) {
                 $newArticle['visibility'] = true;
             } else {
