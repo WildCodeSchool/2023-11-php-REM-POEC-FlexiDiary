@@ -3,6 +3,7 @@
 {% block stylesheet %}
 	{{parent()}}
 	<link rel="stylesheet" href="/assets/css/article-form.css">
+	<link rel="stylesheet" href="/assets/css/footer_sticky.css">
 {% endblock %}
 
 {% block content %}
@@ -11,38 +12,40 @@
 			<p>{{error}}</p>
 		{% endfor %}
 	</div>
-	<div class="container">
-		<form action="/article/create?id={{ idBlog }}" method="post" enctype="multipart/form-data">
-			<h1>Créer Article</h1>
-			<div class="fillingBox">
+	<h1 class="title-form">Rempli ton blog d'un article !</h1>
+	<div class="container">	
+		<form class="form" action="/article/create?id={{ idBlog }}" method="post" enctype="multipart/form-data">
+			<div class="blog-input">
 				<label for="Title">Le titre de l'article:</label>
 				<br>
 				<input type="text" id="Title" name="Title" required="true">
 			</div>
-			<div class="fillingBox">
+			<div class="blog-input">
 				<label for="content">Ton meilleur contenu :</label>
 				<br>
 				<textarea name="Content" id="content" cols="90%" rows="10"></textarea>
 			</div>
-			<div class="fillingBox">
+			<div class="blog-input">
 				<label for="picture">Quelle image accompagnera tes mots ?
 				</label>
 				<input type="file" name="picture" id="picture">
 			</div>
-			<div class="fillingBox">
-				<label for="tags">Sujet de cet article :</label>
+			<div class="blog-input">
+			<div>
+				<label for="tags">Sujet de cet article :</label><br>
 				<select name="tags" id="tags">
 					{% for tag in tags %}
 						<option value="{{tag.idTag}}">{{ tag.Tag_Name }}</option>
 					{% endfor %}
 				</select>
+				</div>
 			</div>
-			<div class="fillingBox">
+			<div class="blog-checkbox-input">
 				<label for="visibility">Mettre en ligne immédiatement ?
 				</label>
 				<input type="checkbox" name="visibility" id="visibility">
 			</div>
-			<button type="submit" id="submit">Enregistrer</button>
+			<button class="button form-button" type="submit" id="submit">Créer un article</button>
 		</form>
 	</div>
 {% endblock %}

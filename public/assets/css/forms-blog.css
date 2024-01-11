@@ -1,9 +1,56 @@
+.title-form{
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--secondary-color);
+}
+
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
+  color: white;
+  font-size: 1.15rem;
+  font-family: var(--typo-p);
+  font-weight: bold;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  background:linear-gradient(#9F77B8, #9F4EA2, #A7366C);
+  padding: 1.5rem;
+  border-radius:5%;
+}
+
+.blog-input
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-checkbox-input{
+  vertical-align: middle;
 }
 
 .blog-desc{
   display: flex;
+}
+
+.form-button
+{
+   margin-top: 1rem;
+   align-self: center;
+   padding: 0;
+   border-style: none;
+   color: white;
+   border-radius: 50px;
+   font-size: 1rem;
+}
+
+input[type=input],input[type=email],input[type=password]
+{
+   border: 1px solid black;
+   height: 30px;
 }
