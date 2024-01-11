@@ -106,10 +106,10 @@ class BlogController extends AbstractController
             $dataBlogSecure['visibility'] = $newBlog['visibility'];
 
             if (empty($errors)) {
-                $blogManager = new BlogsManager();
                 $imageBlog = $uploadFile;
                 $dateCreation = new DateTimeImmutable('now');
                 $dateFormat = $dateCreation->format("Y-m-d");
+                $blogManager = new BlogsManager();
                 $idBlog = $blogManager->insert($dataBlogSecure, $dateFormat, $idUser, $imageBlog);
                 header('Location:/article/create?id=' . $idBlog);
                 return null;

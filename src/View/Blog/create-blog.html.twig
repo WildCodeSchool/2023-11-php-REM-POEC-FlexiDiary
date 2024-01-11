@@ -2,26 +2,27 @@
 {% block stylesheet %}
 	{{parent()}}
 	<link rel="stylesheet" href="/assets/css/forms-blog.css">
+	<link rel="stylesheet" href="/assets/css/footer_sticky.css">
 {% endblock %}
 
 {% block content %}
 <h1 class="title-form">Donnes une âme à ton nouveau blog!</h1>
 <div class="container">
-<form method="post" class="form-create-blog" enctype="multipart/form-data">
-	<div>
+<form class="form" method="post" class="form-create-blog" enctype="multipart/form-data">
+	<div class="blog-input">
 		<label for="Title">Le titre de ton blog :</label><br>
 		<input class="input-title" type="text" id="Title" name="Title" required="true">
 	</div>
-	<div>
+	<div class="blog-input">
 		<label for="Description">Décris ton univers en quelques mots :
 		</label>
 		<textarea class="input-description" name="Description" id="Description" cols="80%" rows="10" required></textarea>
 	</div>
-	<div>
+	<div class="blog-input">
     <label for="bg-image">Choisis une image pour l'identité de ton blog :</label>   
     <input type="file" name="bg-image" id="bg-image" />
 	</div>
-	<div>
+	<div class="blog-input">
 		<div>
 			<label for="Typo-title">Choisis la typo pour les titres d'articles</label><br>
 			<select class="input-typo" class="typo1" id="Typo-title" name="Typo-title" required>
@@ -39,18 +40,18 @@
 			</select>
 		</div>
 	</div>
-		<div>
+		<div class="blog-input">
 			<label for="colorRef">Couleur de référence :</label>
 			<input class="input-color-picker" type="color" id="colorRef" name="colorRef" required="false">
 		</div>
-	<div>
+	<div class="blog-checkbox-input">
 		<label for="visibility">En ligne :
 		</label>
 		<input class="input-checkbock-visibility" type="checkbox" name="visibility" id="visibility">
 	</div>
-	<div>
-		<button type="submit" id="submit">Envoyer</button>
-	</div>
+
+		<button class="button form-button" type="submit" id="submit">Créer un blog</button>
+
 </form>
 </div>	
 {% endblock %}

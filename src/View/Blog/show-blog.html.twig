@@ -2,6 +2,8 @@
 {% block stylesheet %}
 	{{parent()}}
 	<link rel="stylesheet" href="/assets/css/articles-display.css">
+	<link rel="stylesheet" href="/assets/css/footer_sticky.css">
+
 {% endblock %}
 
 {% block content %}
@@ -16,6 +18,8 @@
 					<p class="article-content">{{article.Content}}</p>
 				</div>
 			</div>
+			
+			<div class="article-hr" style="background-color:{{blog.Background_color}}"></div>
 		{% endif %}
 	{% endfor %}
 
