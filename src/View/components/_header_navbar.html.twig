@@ -5,7 +5,7 @@
             {% if user %}
                 <li class="navitem"><a href="/profil?idUser={{user.idUsers}}">
                 <div class="nav-user">
-                <img src={{user.Picture}}>
+                <img src="/{{user.Picture}}" />
                 {{user.Name}}
                 </div>
                 </a>
