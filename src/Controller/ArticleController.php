@@ -33,8 +33,8 @@ class ArticleController extends AbstractController
                 $errors[] = $baseDir . $uploadFile;
             }
             $dataArticleSecure = [];
-            $dataArticleSecure['Title'] = htmlentities($newArticle['Title']);
-            $dataArticleSecure['Content'] = htmlentities($newArticle['Content']);
+            $dataArticleSecure['Title'] = htmlspecialchars($newArticle['Title'], ENT_NOQUOTES, 'UTF-8');
+            $dataArticleSecure['Content'] = htmlspecialchars($newArticle['Content'], ENT_NOQUOTES, 'UTF-8');
             $dataArticleSecure['visibility'] = $newArticle['visibility'];
             $dataArticleSecure['tags'] = $newArticle['tags'];
             if (empty($errors)) {

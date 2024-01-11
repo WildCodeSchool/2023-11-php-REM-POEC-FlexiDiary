@@ -6,9 +6,8 @@
 		<a href="login" class="button home-button">Je veux créer mon blog !</a>
 	</header>
 
-
 		<div class="container-welcome-text">
-			<div id="content-welcome-texte">
+			<div id="content-welcome-text">
 				<h1 class="welcome-title">FlexiDiary </h1>
 				<h2> Vous êtes unique ! Faites le nous savoir ! </h2>
 				<p class="welcome-content">
@@ -37,8 +36,9 @@
 	
 	<div class="container-tagline">
 		<p>Suivez nous sur les réseaux , partagez vos meilleurs articles , faites tournez vos passions dans vos cercles.</p>
+		{% include "Home/../components/_tagline.html.twig" %}
 	</div>
-	{% include "Home/../components/_tagline.html.twig" %}
+	
 {% endblock %}
 
 {% block footer %}
