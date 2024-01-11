@@ -18,6 +18,7 @@ header{
 } 
 #hero-title {
 	margin: 0 0 4rem 0;
+	font-size: 3rem;
 }
 .home-button {
 	text-decoration: none;
@@ -28,12 +29,10 @@ header{
 }
 /* container, welcome text, blogs, tagline, reseaux sociaux */
 .container-welcome-text{
-	width: 80vw;
-	margin-left:10vw;
-	margin-top: 2vh;
-	margin-bottom: 15vh;
 	text-align: center;
-	height: 25vh;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
 }
 p.welcome-content{
 	width: calc(100% - 100px);
@@ -42,11 +41,11 @@ p.welcome-content{
 	width: 80vw;
 	margin-left:10vw;
 	margin-top: 1vh;
+	margin-bottom: 2rem;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	height: 5vh;
 	font-size: 1.2em;
 }
 .welcome-title{
