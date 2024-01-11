@@ -7,18 +7,22 @@
 {% block content %}
 <h1 class="title-form">Donnes une âme à ton nouveau blog!</h1>
 <div class="container">
-<form method="post" class="form-create-blog">
-	<div class="form-section-title">
+<form method="post" class="form-create-blog" enctype="multipart/form-data">
+	<div>
 		<label for="Title">Le titre de ton blog :</label><br>
 		<input class="input-title" type="text" id="Title" name="Title" required="true">
 	</div>
-	<div class="form-section-description">
+	<div>
 		<label for="Description">Décris ton univers en quelques mots :
 		</label>
 		<textarea class="input-description" name="Description" id="Description" cols="80%" rows="10" required></textarea>
 	</div>
-	<div class="form-section-ui">
-		<div class="form-section-typo">
+	<div>
+    <label for="bg-image">Choisis une image pour l'identité de ton blog :</label>   
+    <input type="file" name="bg-image" id="bg-image" />
+	</div>
+	<div>
+		<div>
 			<label for="Typo-title">Choisis la typo pour les titres d'articles</label><br>
 			<select class="input-typo" class="typo1" id="Typo-title" name="Typo-title" required>
 				<option value="">Select</option>
@@ -34,17 +38,17 @@
 				<option value="Lucida Console,Monaco,monospace" style="font-family: Lucida Console,Monaco,monospace">Lucida Console</option>
 			</select>
 		</div>
-		<div class="form-section-colorref">
+	</div>
+		<div>
 			<label for="colorRef">Couleur de référence :</label>
 			<input class="input-color-picker" type="color" id="colorRef" name="colorRef" required="false">
 		</div>
-	</div>
-	<div class="form-section-visibility">
+	<div>
 		<label for="visibility">En ligne :
 		</label>
 		<input class="input-checkbock-visibility" type="checkbox" name="visibility" id="visibility">
 	</div>
-	<div class="buttonsLine">
+	<div>
 		<button type="submit" id="submit">Envoyer</button>
 	</div>
 </form>
