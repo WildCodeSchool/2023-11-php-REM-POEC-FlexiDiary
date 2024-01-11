@@ -56,7 +56,8 @@ class BlogsManager extends AbstractManager
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
         (Title, Description, Date_creation, Visible, Background_color, Background_image, Typo_title, idUsers) 
-        VALUES (:Title, :Description, :Date_creation, :Visible, :Background_color, :Background_image, :Typotitle, :idUsers)");
+        VALUES (:Title, :Description, :Date_creation, :Visible, 
+        :Background_color, :Background_image, :Typotitle, :idUsers)");
         $statement->bindValue(':Title', $blog['Title'], PDO::PARAM_STR);
         $statement->bindValue(':Description', $blog['Description'], PDO::PARAM_STR);
         $statement->bindValue(':Date_creation', $dateCreationFormat, PDO::PARAM_STR);

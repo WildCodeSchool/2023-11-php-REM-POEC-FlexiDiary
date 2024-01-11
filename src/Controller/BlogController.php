@@ -78,12 +78,10 @@ class BlogController extends AbstractController
             if (!is_dir($baseDir . '/upload')) {
                 mkdir($baseDir . '/upload', 0777);
             }
-           
             $extension = pathinfo($_FILES['bg-image']['name'], PATHINFO_EXTENSION);
             $uploadFile = $uploadDir . uniqid() . '.' . $extension;
             $authorizedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
             $newBlog = array_map('trim', $_POST);
-
 
             if (strlen($newBlog['Title']) === 0  || strlen($newBlog['Title']) > 85) {
                 $errors[] = 'Le titre du blog doit faire au minimum 2 caractères et maximum 85 caractères';
@@ -107,7 +105,6 @@ class BlogController extends AbstractController
             $dataBlogSecure['colorRef'] = $newBlog['colorRef'];
             $dataBlogSecure['visibility'] = $newBlog['visibility'];
 
-            
             if (empty($errors)) {
                 $blogManager = new BlogsManager();
                 $imageBlog = $uploadFile;
