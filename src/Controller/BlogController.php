@@ -99,8 +99,8 @@ class BlogController extends AbstractController
             }
 
             $dataBlogSecure = [];
-            $dataBlogSecure['Title'] = htmlentities($newBlog['Title']);
-            $dataBlogSecure['Description'] = htmlentities($newBlog['Description']);
+            $dataBlogSecure['Title'] = htmlspecialchars($newBlog['Title'], ENT_NOQUOTES, 'UTF-8');
+            $dataBlogSecure['Description'] = htmlspecialchars($newBlog['Description'], ENT_NOQUOTES, 'UTF-8');
             $dataBlogSecure['Typo-title'] = $newBlog['Typo-title'];
             $dataBlogSecure['colorRef'] = $newBlog['colorRef'];
             $dataBlogSecure['visibility'] = $newBlog['visibility'];
