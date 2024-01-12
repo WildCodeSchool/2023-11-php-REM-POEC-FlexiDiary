@@ -1,0 +1,81 @@
+body
+{
+	background-image: url('../images/backgroundtest2.png');
+}
+
+.container
+{
+   display: flex;
+   justify-content: center;
+   width: 100vw;
+   margin: 8rem 0 8rem 0;
+}
+
+.form-container
+{
+   display: flex;
+   flex-direction: column;
+   background: var(--gradient-color);
+   width: 50%;
+   height: auto;
+   padding: 1.5rem;
+   border-radius: 20px;
+}
+
+form
+{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.form-container label
+{
+   font-family: var(--typo-p);
+   color: white;
+}
+
+.form-title
+{
+   font-family: var(--typo-h);
+   font-weight: 400;
+   color: white;
+   align-self: center;
+}
+
+.form-container div
+{
+   display: flex;
+   flex-direction: column;
+   width: 80%;
+   gap: .3rem;
+   margin-bottom: .5rem;
+}
+
+.form-container div:first-child
+{
+   margin: 1rem 0 .5rem 0;
+}
+
+.form-button
+{
+   margin-top: 1rem;
+   align-self: center;
+   padding: 0;
+   border-style: none;
+   color: white;
+   border-radius: 50px;
+   font-size: 1rem;
+}
+
+input[type=input],input[type=email],input[type=password]
+{
+   border: 1px solid black;
+   height: 30px;
+}
+
+a
+{
+color: white;
+margin: 1rem 0 1rem 0;
+}

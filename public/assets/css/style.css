@@ -1,3 +1,64 @@
+:root {
+    --primary-bg-color: #b08fd1;
+    --secondary-color: #471974;
+    --tertiary-color: #A7366C;
+    --gradient-color: linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
+    --dark-border-color: #133408;
+    --typo-color: whitesmoke;
+    --typo-h: "Jost", sans-serif;
+    --typo-p: "Anaheim", sans-serif;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: black;
+}
+h1, h2, h3
+{
+    font-family: var(--typo-h);
+}
+
+p{
+    font-family: var(--typo-p);
+}
+
 body {
-    color: #f76c6c;
+    background-color: #efefef;
+}
+.button {
+    width: 120px;
+    height: 50px;
+    padding-top: 12px;
+    background-color: #90b877;
+    font-family: var(--typo-h);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-secondary {
+    background-color: #fff;
+    border: 1px solid #90b877;
+}
+
+.navitem.button-secondary a
+{
+    color: #90b877;
+}
+
+* {
+    --gradiant-background : -webkit-linear-gradient(90deg, rgba(159,119,184,1) 0%, rgba(191,78,162,1) 50%, rgba(167,54,108,1) 100%);
+    --primary-bg-color: #9f77b8;
+    --secondary-color: #a7366c;
+    --dark-border-color: #133408;
+    --typo-color:whitesmoke;
+    --dark-typo-color : #000; 
+  }
+
+body {
+    color: var(--dark-typo-color);
+    background-color:rgb(241, 240, 240) !important;
 }

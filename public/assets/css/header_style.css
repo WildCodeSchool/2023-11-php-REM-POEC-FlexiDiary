@@ -1,0 +1,51 @@
+.nav {
+    background: var(--gradient-color); 
+    background: -moz-linear-gradient(--gradient-color);
+    background: -webkit-linear-gradient(--gradient-color);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.navlist {
+    display: flex;
+    flex-direction: row;
+    font-family: var(--typo-h);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+    flex-basis: 30%;
+}
+
+.navitem {
+    list-style: none;
+    margin-right: 2rem;
+    flex-basis: 40%;
+}
+
+.navitem a {
+    text-decoration: none;
+    color: var(--typo-color);
+    font-weight: 700;
+}
+.navitem:first-child {
+    margin-right: auto;
+}
+.logo-header {
+    height: 10vh;
+}
+
+.nav-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.nav-user img{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+}

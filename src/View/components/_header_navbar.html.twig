@@ -1,0 +1,19 @@
+<nav class="nav">
+             <a href="/"><img src="/assets/images/logo-final-flexi.png" class="logo-header" alt="logo lettre F avec une plume noir qui trace une ligne fine "></a>
+        <ul class="navlist">
+            <li class="navitem"><a href="/explorer">Explorer</a></li>
+            {% if user %}
+                <li class="navitem"><a href="/profil?idUser={{user.idUsers}}">
+                <div class="nav-user">
+                <img src="/{{user.Picture}}" />
+                {{user.Name}}
+                </div>
+                </a>
+                </li>
+                <li class="navitem button"><a href="/logout">Déconnexion</a></li>
+            {% else %}
+                <li class="navitem button button-secondary"><a href="/signup">Inscription</a></li>
+                <li class="navitem button"><a href="/login">Connexion</a></li>
+            {% endif %}
+        </ul>
+    </nav>

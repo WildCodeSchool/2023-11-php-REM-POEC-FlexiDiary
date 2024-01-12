@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	{{parent()}}
+	<link rel="stylesheet" href="/assets/css/blogs_preview_card_style.css">
+	<link rel="stylesheet" href="/assets/css/footer_sticky.css">
+{% endblock %}
+
+{% block content %}
+{% if explore == false %}
+	{% if user %}
+	<h1 class="title-list-blog" >Mes blogs</h1>
+	{% include "Blog/../components/_blog_to_create.html.twig" %}
+	{% endif %}
+{% endif %}	
+	<div class="list-blogs-exists">
+		{% for blog in blogs %}
+			{% include 'Blog/../components/_blogs_preview_personnal_space.html.twig' with {"Blog": blog } %}
+		{% endfor %}
+	</div>
+{% endblock %}
+
