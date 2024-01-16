@@ -41,7 +41,7 @@ p.welcome-content{
 .container-tagline{
 	width: 80vw;
 	margin-left:10vw;
-	margin-top: 1vh;
+	margin-top: 5vh;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -120,13 +120,11 @@ p.welcome-content{
 		width: 300px;
 	}
 }
-
 @media(max-width:1100px){
 	blog-box{
 		width: 70%;
 	}
 }
-
 @media(max-width:550px){
 	blog-box{
 		margin: 20px 10px;
